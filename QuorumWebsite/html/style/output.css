@@ -997,6 +997,10 @@ video {
   min-height: 100px;
 }
 
+.min-h-\[172px\]{
+  min-height: 172px;
+}
+
 .min-h-\[192px\]{
   min-height: 192px;
 }
@@ -1549,6 +1553,10 @@ video {
   background-color: rgba(255, 255, 255, 1) !important;
 }
 
+.\!bg-quorum-blue-150{
+  background-color: rgba(18, 90, 119, 1) !important;
+}
+
 .\!bg-quorum-blue-25{
   background-color: rgba(172, 209, 223, 1) !important;
 }
@@ -1646,10 +1654,6 @@ video {
 
 .bg-transparent{
   background-color: transparent;
-}
-
-.\!bg-quorum-blue-150{
-  background-color: rgba(18, 90, 119, 1) !important;
 }
 
 .bg-opacity-50{
@@ -1842,6 +1846,11 @@ video {
 .py-5{
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
+}
+
+.px-4\%{
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 .pb-0{
@@ -2710,6 +2719,10 @@ pre[class*="language-quorum"] {
     grid-column: span 2 / span 2;
   }
 
+  .md\:col-span-3{
+    grid-column: span 3 / span 3;
+  }
+
   .md\:block{
     display: block;
   }
@@ -2910,10 +2923,6 @@ pre[class*="language-quorum"] {
     flex-direction: row;
   }
 
-  .lg\:justify-start{
-    justify-content: flex-start;
-  }
-
   .lg\:px-0{
     padding-left: 0px;
     padding-right: 0px;
@@ -2955,6 +2964,29 @@ pre[class*="language-quorum"] {
 
   .xl\:w-4\/5{
     width: 80%;
+  }
+
+  .xl\:w-1\/2{
+    width: 50%;
+  }
+
+  .xl\:flex-row{
+    flex-direction: row;
+  }
+
+  .xl\:px-20{
+    padding-left: 5rem;
+    padding-right: 5rem;
+  }
+
+  .xl\:px-10{
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
+
+  .xl\:px-10\%{
+    padding-left: 10%;
+    padding-right: 10%;
   }
 }
 

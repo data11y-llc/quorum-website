@@ -247,10 +247,10 @@ class Reference is Lesson
 
 //Course Card Long
       Division card_contributer
-          card_contributer:AddClassAttribute("bg-neutral-black text-neutral-white rounded-lg shadow-md flex  items-center justify-center  box-border overflow-hidden col-span-1 md:col-span-2 flex-col-reverse lg:flex-row")
+          card_contributer:AddClassAttribute("bg-neutral-black text-neutral-white rounded-lg shadow-md flex  items-center justify-center  box-border overflow-hidden col-span-1 md:col-span-2 flex-col-reverse xl:flex-row")
 
           Division contentDiv
-          contentDiv:AddClassAttribute("bg-transparent  p-4 flex-grow flex flex-col justify-between px-10 lg:px-20 w-full md:w-1/2")
+          contentDiv:AddClassAttribute("bg-transparent  p-4 flex-grow flex flex-col justify-between px-10 xl:px-20 w-full")
 
           Heading heading_card
           heading_card:SetScale(3)
@@ -275,7 +275,7 @@ class Reference is Lesson
           contentDiv:Add(buttonDiv)
 
           Division imageDiv
-          imageDiv:AddClassAttribute("h-[308px] relative w-full md:w-1/2 flex-grow-0 flex-shrink-0")
+          imageDiv:AddClassAttribute("h-[308px] relative w-full xl:w-1/2 flex-grow-0 flex-shrink-0")
           Image image
           image:SetAddress("/media/userInterface/contribute.png")
           image:SetAlternate("Reference Page")
@@ -299,7 +299,7 @@ class Reference is Lesson
           card_overriding:AddClassAttribute("bg-[url('/media/userInterface/cloudBackground.png')] bg-no-repeat bg-cover bg-center rounded-xl flex flex-col justify-center items-center min-h-fit col-span-1 md:col-span-2 lg:col-span-1")
 
           Division innerDiv
-          innerDiv:AddClassAttribute("w-1/2 flex flex-col justify-center h-full py-5 sm:h-3/4")
+          innerDiv:AddClassAttribute("w-3/4 lg:w-full px-4% lg:px-10% flex flex-col justify-center h-full py-5 sm:h-3/4")
 
           Heading heading_card_overriding
           heading_card_overriding:SetScale(3)
