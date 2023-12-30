@@ -1,0 +1,288 @@
+@use '../../foundations/colors/Colors.scss' as *;
+@use '../../foundations/typography/typography.scss' as *;
+@use 'sass:math';
+
+// Define a list of button sizes and colors
+
+$button-sizes: (
+  xsmall: (width: 104px, height: 24px),
+  small: (width: 104px, height: 40px),
+  medium: (width: 136px, height: 40px),
+  large: (width: 240px, height: 40px)
+);
+
+// Define button colors
+$Colors: (
+borderColors:(
+  primary-var1: none,
+  primary-var2: map-get($colors, quorum, blue, 100),
+  primary-var3: map-get($colors, quorum, blue, 100),
+  accent-var1: none,
+  negative-var1: none,
+  secondary-var1: none,
+  secondary-var2: map-get($colors, neutral, grey, 95),
+  static-var1: none,
+  static-var2: none,
+  link-var1: none,
+  hico-var1: none,
+),
+backgroundColors: (
+  primary-var1: map-get($colors, quorum, blue, 100),
+  primary-var2: map-get($colors, neutral, white),
+  primary-var3: map-get($colors, quorum, blue, 10),
+  accent-var1: map-get($colors, quorum, blue, 50),
+  negative-var1: map-get($colors, secondary, red, 100),
+  secondary-var1: map-get($colors, neutral, grey, 25),
+  secondary-var2: map-get($colors, neutral, black),
+  static-var1: map-get($colors, neutral, white),
+  static-var2: map-get($colors, neutral, black),
+  link-var1: transparent,
+  hico-var1: map-get($colors, text, hico, blue)
+)
+);
+
+//make a mixin to clear out the button styles
+@mixin clearButton() {
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+// Define mixins
+
+@mixin button-states($background-color, $border-color, $font-color) {
+  // Calculate the background color for hover, focus, and disabled states
+  $darker-background-color: if($background-color == transparent, map-get($colors, neutral, grey, 10), darken($background-color, 10%));
+
+  // Calculate the border color for active state
+  $active-border-color: null;
+
+  @if $border-color != null and $border-color != none {
+    $active-border-color: if(lightness($background-color) < 50, darken($border-color, 10%), lighten($border-color, 10%));
+  }
+  @else {
+    //if font-color is black or white, use the opposite color
+    $solid-border: if($font-color == black or $font-color == white, if($font-color == black, black, white), $font-color);
+    @if $background-color == transparent {
+      $active-border-color: $solid-border;
+    }
+    @else {
+      @if lightness($background-color) < 40 {
+        $active-border-color: darken($background-color, 10%);
+      } @else {
+        $active-border-color: lighten($background-color, 10%);
+      }
+    }
+  }
+
+  // Apply styles for each state
+  &:not(:disabled):hover {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    color: wcag-font-color($background-color);
+  }
+  //if not disabled, apply active styles
+  &:not(:disabled):active {
+    border: 2px solid $active-border-color;
+    color: wcag-font-color($background-color); 
+  }
+  &:not(:disabled):focus-visible {
+    color: wcag-font-color($background-color);
+    //if background-color is transparent, use black border, otherwise use the darker background color
+    outline: 2px solid if($background-color == transparent, black, $darker-background-color);
+    outline-offset: 3px;
+  }
+  &:disabled {
+    color: wcag-font-color($background-color);
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+}
+
+
+@function luminance($color) {
+  $red: math.div(green($color), 255);
+  $green: math.div(green($color), 255);
+  $blue: math.div(blue($color), 255);
+  $red: if($red <= 0.03928, math.div($red, 12.92), math.pow((math.div($red + 0.055, 1.055)), 2.4));
+  $green: if($green <= 0.03928, math.div($green, 12.92), math.pow((math.div($green + 0.055, 1.055)), 2.4));
+  $blue: if($blue <= 0.03928, math.div($blue, 12.92), math.pow((math.div($blue + 0.055, 1.055)), 2.4));
+  @return 0.2126 * $red + 0.7152 * $green + 0.0722 * $blue;
+}
+
+@function contrast-ratio($color1, $color2) {
+  $luminance1: luminance($color1) + 0.05;
+  $luminance2: luminance($color2) + 0.05;
+  @return math.div(max($luminance1, $luminance2), min($luminance1, $luminance2));
+}
+
+@function wcag-font-color($background-color, $aaa: false) {
+  $required-contrast: if($aaa, 7, 4.5);
+
+  $white-contrast: contrast-ratio($background-color, white);
+  $black-contrast: contrast-ratio($background-color, black);
+
+  @if $background-color == transparent {
+    @return black;
+  } @else if $white-contrast >= $required-contrast and $white-contrast >= $black-contrast {
+    @return white;
+  } @else if $black-contrast >= $required-contrast and $black-contrast >= $white-contrast {
+    @return black;
+  } @else {
+    //Fallback to white or black, depending on the lightness
+    @return if(lightness($background-color) < 50, white, black);
+  }
+}
+
+@mixin createButton($size, $variant-name) {
+  @include clearButton();
+
+  $background-color: map-get($Colors, backgroundColors, $variant-name);
+  $border-color: map-get($Colors, borderColors, $variant-name);
+  // $font-color: if($background-color == transparent, black, if(lightness($background-color) < 50, white, black));
+  
+  $font-color: wcag-font-color($background-color);
+  @include button-states($background-color, $border-color, $font-color);
+
+  $button-size: map-get($button-sizes, $size);
+
+  //if background-color is transparent, set text color to black, 
+  color: $font-color;
+
+  border-radius: 16px;
+  @if $border-color != none {
+    border: 2px solid $border-color;
+  } @else {
+    border: none;
+  }
+  background-color: $background-color;
+
+  width: map-get($button-size, width);
+  height: map-get($button-size, height);
+
+  //make font size fit inside button
+  font-family: Montserrat;
+  font-size: if($size == "xsmall", 12px, if($size == "small", 14px, if($size == "medium", 16px, 18px)));
+  font-weight: 600;
+
+  //use ellipsis if text is too long
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Loop through the list of buttons and create a button class for each size and color
+@each $size, $button-size in $button-sizes {
+  @each $variant-name, $background-color in map-get($Colors, backgroundColors) {
+    $border-color: map-get($Colors, borderColors, $variant-name);
+
+    // Add purpose to class name if applicable
+    @if $variant-name == "link-var1" {
+      $button-purpose: "link";
+    } @else if $variant-name == "hico-var1" {
+      $button-purpose: "hico";
+    } @else if $variant-name == "negative-var1" {
+      $button-purpose: "negative";
+    }
+
+    .btn-#{$size}-#{$variant-name} {
+      @include createButton($size, $variant-name);
+    }
+  }
+}
+
+//create circle button
+@each $variant-name, $background-color in map-get($Colors, backgroundColors) {
+  $border-color: map-get($Colors, borderColors, $variant-name);
+
+  // Add purpose to class name if applicable
+  @if $variant-name == "link-var1" {
+    $button-purpose: "link";
+  } @else if $variant-name == "hico-var1" {
+    $button-purpose: "hico";
+  } @else if $variant-name == "negative-var1" {
+    $button-purpose: "negative";
+  }
+
+  .btn-circle-#{$variant-name} {
+    @include clearButton();
+
+    // $font-color: if($background-color == transparent, black, if(lightness($background-color) < 50, white, black));
+  $font-color: wcag-font-color($background-color);
+    @include button-states($background-color, $border-color, $font-color);
+
+    border-radius: 50%;
+    @if $border-color != none {
+      border: 2px solid $border-color;
+    } @else {
+      border: none;
+    }
+    background-color: $background-color;
+
+    min-width: 24px;
+    min-height: 24px;
+    height: 24px;
+    width: 24px;
+
+    //make font size fit inside button
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+
+    //use ellipsis if text is too long
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+  }
+}
+
+//create icon button
+  .btn-icon {
+    @include clearButton();
+
+    border-radius: 50%;
+    border: none;
+
+    min-width: 24px;
+    min-height: 24px;
+    height: 24px;
+    width: 24px;
+    background-color: transparent;
+
+    //make font size fit inside button
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 600;
+
+    //use ellipsis if text is too long
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px;
+    //if disabled add a cross through the icon
+    &:disabled {
+      & > * {
+        opacity: 0.5;
+      }
+    }
+  }
+
+

@@ -1,0 +1,49 @@
+{
+  "compilerOptions": {
+    "resolveJsonModule": true,
+    "outDir": "./dist",
+    "strictPropertyInitialization": false,
+    "types": [
+      "vite/client"
+    ],
+    "sourceMap": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "composite": true,
+    "target": "ES2022",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "paths": {
+      "csstype": [
+        "./node_modules/csstype/index"
+      ],
+      "face-api": [
+        "./node_modules/face-api.js/build/es6/index"
+      ],
+      "lit": [
+        "./node_modules/lit"
+      ],
+      "example": [
+        "./src/UiKit/example.json"
+      ],
+      "js-cookie": [
+        "./node_modules/js-cookie/dist/js.cookie.js"
+      ],
+      "jszip": [
+        "./node_modules/jszip/index.d.ts"
+      ]
+    }
+  },
+  "include": [
+    "./src/**/*.ts",
+    "./src/**/*.json",
+    "./package.json"
+  ],
+  "exclude": [
+    "**/node_modules/**"
+  ]
+}

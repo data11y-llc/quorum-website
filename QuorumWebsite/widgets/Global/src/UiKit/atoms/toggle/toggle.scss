@@ -1,0 +1,67 @@
+@use '../../foundations/colors/Colors.scss' as *;
+
+$border-radius: 34px;
+
+.data11y_switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  border-radius: $border-radius;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .data11y_slider {
+    //this is the background oval
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ccc;
+    border-radius: $border-radius;
+
+    &:before {
+      //this is the round circle
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+  }
+  input:checked:focus-visible + .data11y_slider {
+    box-shadow: 0 0 1px #2196F3;
+    outline-offset: 2px;
+    outline: 2px solid map-get($colors, quorum, blue, 100);
+  }
+
+  input:not(checked):focus-visible + .data11y_slider {
+    box-shadow: 0 0 1px #2196F3;
+    outline-offset: 1px;
+    outline: 2px solid map-get($colors, neutral, grey, 25);
+  }
+
+  input:checked + .data11y_slider {
+    background: map-get($colors, quorum, blue, 100);
+  }
+  input:not(checked) + .data11y_slider:before {
+    background: map-get($colors, neutral, grey, 25);
+  }
+
+  input:checked + .data11y_slider:before {
+    background: map-get($colors, neutral, white);
+    transform: translateX(26px);
+  }
+}
+

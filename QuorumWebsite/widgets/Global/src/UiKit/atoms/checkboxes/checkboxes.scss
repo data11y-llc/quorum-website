@@ -1,0 +1,307 @@
+//make 3 checkboxes colors light, dark, high contrast
+// allow checkboxes to be in a row or column
+@use "../../foundations/colors/colors.scss" as *;
+$spacing-1: 4px;
+$spacing-2: 8px;
+$spacing-3: 12px;
+$spacing-4: 16px;
+$spacing-5: 20px;
+
+
+$checkbox-colors: (
+  light: (
+    unchecked:(
+      background-color: map-get($colors, neutral, white),
+      border-color: map-get($colors, neutral, grey, 50),
+      color: map-get($colors, neutral, black),
+    ),
+    checked:(
+      background-color: map-get($colors, quorum, blue, 100),
+      border-color: none,
+      color: map-get($colors, neutral, black),
+    ),
+    hover:(
+      background-color: rgba(map-get($colors, quorum, blue, 100), .7),
+    ),
+    disabled:(
+      background-color: map-get($colors, neutral, white),
+      border-color: map-get($colors, neutral, grey, 15),
+    ),
+    focused:(
+      background-color: map-get($colors, quorum, blue, 100),
+      border-color: map-get($colors, quorum, blue, 100),
+    ),
+    label:(
+      color: map-get($colors, neutral, black),
+      hover-color: map-get($colors, quorum, blue, 100),
+    ),
+  ),
+  dark: (
+    unchecked:(
+      background-color: map-get($colors, neutral, grey, 65),
+      border-color: map-get($colors, neutral, grey, 25),
+      color: map-get($colors, neutral, grey, 10),
+    ),
+    checked:(
+      background-color: map-get($colors, quorum, blue, 50),
+      border-color:  map-get($colors, quorum, blue, 50),
+    ),
+    hover:(
+      background-color: rgba(map-get($colors, quorum, blue, 50), .7),
+    ),
+    disabled:(
+      background-color: map-get($colors, neutral, grey, 50),
+      border-color: map-get($colors, neutral, grey, 95),
+    ),
+    focused:(
+      background-color: map-get($colors, quorum, blue, 50),
+      border-color: map-get($colors, quorum, blue, 50),
+    ),
+    label:(
+      color: map-get($colors, neutral, grey, 10),
+      hover-color: map-get($colors, quorum, blue, 50),
+    ),
+  ),
+  high-contrast: (
+    unchecked:(
+      background-color: map-get($colors, neutral, black),
+      border-color: map-get($colors, neutral, white),
+      color: map-get($colors, neutral, white),
+    ),
+    checked:(
+      background-color: map-get($colors, text, hico, blue),
+      border-color: none,
+    ),
+    hover:(
+      background-color: rgba(map-get($colors, text, hico, blue), .7),
+    ),
+    disabled:(
+      background-color: map-get($colors, neutral, black),
+      border-color: map-get($colors, neutral, black),
+    ),
+    focused:(
+      background-color: map-get($colors, text, hico, blue),
+      border-color: map-get($colors, text, hico, blue),
+    ),
+    label:(
+      color: map-get($colors, neutral, white),
+      hover-color: map-get($colors, text, hico, blue),
+    ),
+  ),
+);
+// Mixins
+@mixin checkbox-state($color) {
+  background-color: map-get($color, background-color);
+  border-color: map-get($color, border-color);
+
+  &:not(:checked) {
+    background-color: map-get($color, unchecked, background-color);
+    z-index: 1;
+    
+  }
+    
+  &:checked {
+      //make background color of checkbox blue
+      background: map-get($color, checked, background-color);
+      width: 32px;
+      height: 32px;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 32px;
+        height: 32px;
+        border-radius: 8px;
+        border: none;
+      }
+
+    &::after {
+      content: url("@/UiKit/atoms/icons/svg/icon6.svg");
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+
+
+  &::before{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    line-height: 32px;
+    border-radius: 8px;
+    text-align: center;
+    border:none;
+    outline: none;
+  }
+
+  &::after{
+    content: "";
+    background: none;
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    font-size: 20px;
+    line-height: 32px;
+    border-radius: 8px;
+    border:none;
+    text-align: center;
+    outline: map-get($color, focused, border-color) auto 0px;
+  }
+
+  &:hover:not(:disabled) {
+    //make a big circle around my checkbox when I hover over it
+    &::before {
+      color: map-get($color, hover, background-color);
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 0;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      background-color: map-get($color, hover, background-color);
+    }
+
+    &:not(:checked)::after {
+      z-index: 1;
+      background-color: map-get($color, unchecked, background-color);
+      border: map-get($color, focused, border-color) auto 1px;
+      outline: map-get($color, focused, border-color) auto 1px;
+    }
+    &:checked::after {
+      z-index: 1;
+      background-color: map-get($color, checked, background-color);
+      border: none;
+    }
+
+  }
+  &:focus:not(:disabled) {
+    //make a big circle around my checkbox when I hover over it
+    &:not(:checked)::after {
+      z-index: 1;
+      border: map-get($color, focused, border-color) auto 1px;
+      outline: map-get($color, focused, border-color) auto 1px;
+    }
+    &:checked::after {
+      z-index: 1;
+      background-color: map-get($color, checked, background-color);
+      border: none;
+    }
+
+  }
+
+}
+
+// Base styles
+@mixin checkbox($color) {
+  //if border-color is none then set border to none
+  @if map-get($color,unchecked, border-color) == none {
+    border: none;
+  }
+  @else {
+    border: 4px solid map-get($color,unchecked, border-color);
+  }
+
+
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  width: 32px;
+  height: 32px;
+  margin-right: $spacing-1;
+  border-radius: 8px;
+  cursor: pointer;
+  border-color: none;
+}
+
+$checkbox-color-schemes: (
+  light,
+  dark,
+  high-contrast,
+);
+
+@each $color-scheme in $checkbox-color-schemes {
+  $class-name: "chkbox_#{$color-scheme}";
+  
+  .checkbox_label_#{$color-scheme} {
+    font-size: 16px;
+    font-family: Montserrat;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    color: map-get($checkbox-colors, $color-scheme, label, color);
+    &:hover {
+      cursor: pointer;
+      text-shadow: 0px 0px 1px map-get($checkbox-colors, $color-scheme, label, hover-color);
+    }
+  }
+  .#{$class-name} {
+    @include checkbox(map-get($checkbox-colors, $color-scheme));
+    @include checkbox-state(map-get($checkbox-colors, $color-scheme));
+  }
+
+  //add input type checkbox to the class name
+
+  input[type="checkbox"].#{$class-name} {
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-right: 10px;
+  -moz-appearance: none;
+  appearance: none;
+  outline: 0;
+  height: 32px;
+  width: 32px;
+  border: 2px solid map-get($checkbox-colors, $color-scheme, unchecked, border-color);
+  color: map-get($checkbox-colors, $color-scheme, unchecked, color);
+    &:disabled {
+      background-color: map-get($checkbox-colors, $color-scheme, disabled, background-color);
+      border-color: map-get($checkbox-colors, $color-scheme, disabled, border-color);
+      cursor: not-allowed;
+    }
+
+    &:focus-visible {
+      border: 2px solid map-get($checkbox-colors, $color-scheme, focused, border-color);
+
+      &::-moz-focus-inner {
+        border: 0;
+      }
+
+      &:not(:checked):not(:disabled) {
+        &::before {
+          content: "";
+          position: absolute;
+          border:none;
+        }
+      }
+    }
+  }
+}
+
+//create checkbox label container class for vertical alignment and row alignment
+.chkbox-label-container_row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 16px;
+  font-family: Montserrat;
+}
+
+.chkbox-label-container_column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-size: 16px;
+  font-family: Montserrat;
+}

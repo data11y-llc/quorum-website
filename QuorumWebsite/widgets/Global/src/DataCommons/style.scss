@@ -1,0 +1,373 @@
+@use '../UiKit/foundations/colors/Colors.scss' as *;
+
+:root {
+  --dc-accordian-width: 30%;
+}
+
+.dc-instructions {
+  padding: 10px;
+  border-radius: 5px; // Rounded corners
+  color: #333;  // Dark gray color for text
+  font-size: 1.2em;  // Larger font size for better readability
+  line-height: 1.6; // Improved readability with more space between lines
+  margin-bottom: 20px; // Space between this and next element
+  
+  h2 {
+    margin-top: 0; // No extra space at the top of the box
+    font-size: 1.4em; // Slightly larger font size for headers
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+  }
+
+  p {
+    margin-bottom: 10px; // Space between paragraphs
+  }
+}
+
+@mixin overlay-scrollbar {
+  // For Chrome and Safari
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba(0,0,0,0.2);
+  }
+
+  // For Firefox
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,0,0,0.2) transparent;
+}
+
+
+.datacommons-table-wrapper {
+
+  font-family: "Montserrat", sans-serif;
+  height: fit-content;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  margin-bottom: 8px;
+  // add this to allow scrolling within the table
+  display: block;
+  @include overlay-scrollbar;
+  overflow:auto;
+}
+
+.no-right-border {
+  border-right: none !important;
+}
+
+.no-top-border {
+  border-top: none !important;
+}
+
+.no-bottom-border {
+  border-bottom: none !important;
+}
+
+
+.datacommons-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+
+  thead {
+    position: sticky;
+    top: -1px;
+    z-index: 1;
+    background-color: white;
+    max-height: 50px !important;
+
+    th {
+      padding: 10px;
+      text-align: center;
+      max-height: 50px !important;
+      color: #000; // Ensure good contrast for text in headers
+
+      &:first-child {
+        border-top-left-radius: 7px;
+      }
+
+    }
+
+    .datacommons-table-header {
+      font-weight: bold;
+      max-height: 50px !important;
+      background-color: #75BDDB; // Color with better contrast for readability
+      color: #000; // White color for contrast
+    }
+  }
+
+  tbody {
+    .datacommons-table-row {
+      &:nth-child(even) {
+        background-color: #f9f9f9; // Slightly darker color to increase contrast
+      }
+
+      td {
+        padding: 10px;
+        text-align: center;
+        color: #000; // Ensure good contrast for text in cells
+      }
+
+      .datacommons-table-cell {
+        &:last-child {
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+.dc-main-container {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 100%;
+  min-height: 400px;
+}
+
+.dc-content-container {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.dc-accordian-container {
+  width: var(--dc-accordian-width);
+  border-right: 1px solid #e6e6e6;
+  box-sizing: border-box;
+}
+
+.dc-right-container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - var(--dc-accordian-width));
+  box-sizing: border-box;
+  padding: 8px 16px;
+  row-gap: 8px;
+}
+
+.dc-variable-header-container{
+  //this will hold a header and a paragraph in the container
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: fit-content;
+  row-gap: 8px;
+  font-size: 1.2em;
+  font-family: "Montserrat", sans-serif;
+}
+
+// Style for the main header
+.datacommons-variable-header {
+  color: #333; // Change as per your design
+  font-size: 1.5em; // Change as per your design
+  margin-bottom: 0.5em; // Provide some space between the header and the paragraph
+  font-weight: bold;
+  font-family: "Montserrat";
+  
+  // Style for the paragraph (dcid) within the main header
+  .datacommons-dcid-info {
+    color: #666; // A lighter color to distinguish it from the main header
+    font-size: 16px; // Smaller font size than the main header
+    margin-top: 0.2em; // Some space above the paragraph
+    padding-left: 0.5em; // Indentation from the left
+  }
+}
+
+
+.QuorumOuterUIContainer {
+  &.datacommons {
+    display: flex;
+    align-items: flex-start;
+    align-items: center;
+    border-radius: 8px;
+    border: 1px solid black;
+    height: 400px;
+    box-sizing: border-box;
+  }
+}
+
+.QuorumUIContainer {
+  &.datacommons {
+    margin: 4px;
+    height: calc(100% - 8px);
+    border: none;
+    box-sizing: border-box;
+  }
+}
+
+.variableButtons {
+  &.datacommons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border-radius: 8px;
+    min-height: 100px;
+    row-gap: 8px;
+    column-gap: 8px;
+  }
+
+  button {
+    padding: 16px;
+    width: fit-content !important;
+  }
+}
+
+.accordion-item-leaf {
+  &.datacommons {
+    height: fit-content;
+    text-align: left;
+  }
+}
+
+.accordion-item-branch {
+  &.datacommons {
+    height: fit-content;
+    text-align: left;
+  }
+}
+
+.dc-searchDataDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+}
+
+.dc-submit-button {
+  margin-left: 5px;
+  margin-top: 20px;
+  min-width: 50px;
+  width: fit-content;
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+
+.csvVariableButtonContainer{
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 100px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  //give some space around everything
+  padding: 8px;
+}
+
+.date-input {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + .75rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: .25rem;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+
+  &:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 .2rem rgba(0,123,255,.25);
+  }
+
+  &::placeholder {
+    color: #6c757d;
+    opacity: 1;
+  }
+
+  &:disabled {
+    background-color: #e9ecef;
+    opacity: 1;
+  }
+}
+
+.dcButtonText{
+  max-width: 420px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dchidden{
+  display: none !important;
+}
+
+.csv-style-table {
+  border: 1px solid #dddddd; // Set border for table
+  width: 100%; // Set width for table
+  text-align: left; // Align text to the left
+
+  th, td {
+    border: 1px solid #dddddd; // Set border for table headers and data cells
+    padding: 8px; // Set padding for table headers and data cells
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2; // Set background color for even rows
+  }
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; 
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* keep from collapsing onto itself */
+}
+
+
+.dc-csv-variable-heading{
+  text-align: left;
+  font-size: large;
+  font-weight: bold;
+  font-family: Montserrat;
+  border: none;
+}
+
+.dc-csv-edit-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 8px;
+  width: 100%;
+}
+
+.dc-date-input-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 8px;
+  width: 100%;
+}
+
+.dc-csv-buttons-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 8px;
+  width: 100%;
+}
+

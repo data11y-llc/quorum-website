@@ -1,0 +1,647 @@
+/*********************************************************************/
+/***** BEGIN DESIGN TOOLS THEME IMPORT & CUSTOMIZATION  **************/
+/*********************************************************************/
+/* Import statements need to be at the top of your CSS file */
+/* For Main CSS file */
+/*@import url(https://designtools.ciditools.com/css/themes.css);*/
+/*/* For Mobile app CSS file */*/
+/*/*@import url(https://designtools.ciditools.com/css/app.css);*/*/
+/*/* Institution color customizations */*/
+/*@import url(https://designtools.ciditools.com/css/inst_theme_overrides.css);*/
+/*/* Theme Colors */*/
+/*:root {*/
+/*  --dt-color-primary: #0E0000;*/
+/*  --dt-color-primary-contrast: #FFFFFF;*/
+/*  --dt-color-primary-dark-text: #0E0000;*/
+/*  --dt-color-secondary: #000000;*/
+/*  --dt-color-secondary-contrast: #FFFFFF;*/
+/*  --dt-color-secondary-dark-text: #9D2538;*/
+/*  --dt-color-accent: #E8A903;*/
+/*  --dt-color-accent-contrast: #000000;*/
+/*  --dt-color-graybg: #E6E6E6;*/
+/*  --dt-color-graybg-contrast: #000000;*/
+/*}*/
+
+/*********************************************************************/
+/***** END DESIGN TOOLS HEME IMPORT & CUSTOMIZATION   ****************/
+/*********************************************************************/
+
+/************
+order items
+************/
+
+:root {
+  --reset-color: rgb(255, 221, 221); /* change in the js file */
+  --pixel-gap: 1px; /* change in the js file */
+  --pxfigure-size: 50vh;
+  --pixel-grid-amount: 6;
+  --pixel-size: auto;
+}
+
+.accessChartLoader {
+  border: 1px solid #000;
+  background-color: #ebfaff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  width: fit-content;
+  padding: 5px;
+  margin: 4%;
+}
+.mainContainerAC {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 100%;
+  margin-bottom: 5px;
+}
+
+.QuorumUIContainerAC {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  height: 50vh;
+  width: 100%;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  background-color: white;
+}
+
+#addDataFile[type="file"] {
+  display: none;
+}
+
+.fileCustomInputAC {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  padding: 5px;
+  max-height: 30px;
+  height: 30px;
+  padding: 5px;
+  box-shadow: 0 0 2px #000;
+}
+
+/* on hover make fileCustomInputAC have a shadow */
+.fileCustomInputAC:hover {
+  box-shadow: 0 0 5px #000;
+}
+
+.addDataFileContainer{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.fileName{
+  display: flex;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 5px;
+  width: fit-content;
+}
+
+/* file input  */
+.fileInputRowAC {
+  display: flex;
+  width: 100%;
+  justify-content: start;
+  align-items: baseline;
+  padding: 5px;
+  margin: 10px;
+  /* move content x 10px */
+  margin-left: 10px;
+  flex-direction: row;
+}
+
+
+
+/* row for top and bottom Input items */
+.InputRowAC {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-flow: row nowrap;
+  flex-basis: 100%;
+  padding-top: 10px;
+  gap: 4%;
+  padding: 10px;
+}
+
+/* container for all inputs */
+.InputContainerAC {
+  flex-basis: 25%;
+  width: 100%;
+  flex-direction: row;
+  margin-bottom: 0;
+}
+
+.checkboxContainerAC {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  align-self: flex-start;
+  text-align: center;
+  flex-basis: 25%;
+}
+
+/************
+start of input fields
+************/
+.labelColAC {
+  display: flex;
+  flex-direction: column;
+  margin: 0px;
+}
+
+.labelRowAC {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.labelTextAC {
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 2px;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+
+.innerLabelTextAC {
+  font-size: 0.8rem;
+  font-weight: normal;
+  margin-bottom: 2px;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+
+/* buttons  */
+.saveButtonAC {
+  background-color: #2a7044;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  margin-top: 40px;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: large;
+  transition-property: background-color, opacity, transform;
+  transition-duration: 0.3s;
+}
+.saveButtonAC:focus-visible {
+  transform: scale(1.03);
+}
+
+.saveButtonAC:hover {
+  transform: scale(1.03);
+}
+
+.saveButtonAC:active {
+  transform: translateY(2%);
+}
+
+/* hides a label to help match style  */
+.hideSaveButtonLabelAC {
+  visibility: hidden;
+  line-height: 2;
+}
+
+/* checkbox  */
+.checkboxRowAC {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  white-space: nowrap;
+  transition-property: background-color, opacity, transform;
+  transition-duration: 0.2s;
+}
+
+.disableCheckboxAC {
+  color: #ccc;
+  cursor: not-allowed;
+}
+
+.disableCheckboxAC input[type='checkbox'] {
+  /* disable the checkbox */
+  pointer-events: none;
+  cursor: not-allowed;
+  /* change color  */
+  color: #ccc;
+}
+
+/* checkboxRowAC input type of "checkbox" add margin-left */
+.checkboxRowAC input[type='checkbox'] {
+  margin-left: 5px;
+}
+
+/* Dropdown  */
+.valueDropdownAC {
+  margin-left: 10px;
+  width: 100%;
+}
+
+/* factor dropdown  */
+.factorLabelAC {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 20%;
+  height: fit-content;
+}
+
+.factorAddButtonAC {
+  /* make a square button with a box shadow */
+  background-color: white;
+  color: black;
+  border: black solid 1px;
+  border-radius: 10px;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0px;
+  margin-bottom: 1px;
+  width: 20px;
+  height: 20px;
+  box-shadow: 0px 0px 2px gray;
+  font-size: medium;
+  transition-property: background-color, opacity, transform;
+  transition-duration: 0.3s;
+}
+
+.factorAddButtonAC:focus-visible {
+  transform: scale(1.1);
+}
+
+.factorAddButtonAC:hover {
+  transform: scale(1.1);
+}
+
+.factorAddButtonAC:active {
+  transform: translateY(10%);
+}
+
+/* Size value small text input */
+.dropdownAC,
+.smallTextInputAC,
+.textInputAC {
+  border: 1px solid #000;
+  border-radius: 5px;
+  background-color: white;
+  width: 100%;
+  height: 40px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.dropdownAC {
+  background-color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.smallTextInputAC {
+  margin-bottom: 3px;
+  margin-left: 10px;
+}
+
+/* /1* disables arrow buttons for number type *1/ */
+/* /1* Chrome, Safari, Edge, Opera *1/ */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  /* -webkit-appearance: none; */
+  margin: 0;
+}
+
+.InputContainerAC input[type='number'] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  width: 100%;
+  height: 40px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.innerSizeValueAC input[type='number'] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  width: 100%;
+  height: 40px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.InputContainerAC input[type='text'] {
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  width: 100%;
+  height: 40px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.interceptLockInputAC {
+  margin-top: 10px;
+}
+/* Firefox */
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+.outerSizeValueAC {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 25%;
+}
+
+.innerSizeValueAC {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+.makeSpaceSizeAC {
+  margin-left: 1rem;
+}
+
+/* chart loading and error text */
+.errorTextAC {
+  color: #820000;
+  font-size: 1.5rem;
+  align-self: flex-start;
+  text-align: center;
+  font-weight: bold;
+}
+
+.filterErrorTextAC {
+  color: #820000;
+  font-size: 1rem;
+  align-self: flex-start;
+  text-align: center;
+  font-weight: bold;
+}
+
+.loadingTextAC {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  align-self: flex-start;
+}
+
+.paintItBlack {
+  color: #000 !important;
+}
+
+.data-svg {
+  min-width: 200px;
+}
+
+.quorum-wrapper {
+  z-index: auto !important;
+}
+
+.inlineDropdown {
+  display: flex;
+  flex-direction: row;
+  border-radius: 5px;
+  height: fit-content;
+  width: fit-content;
+  padding: 0;
+  margin-bottom: 0;
+}
+
+/* get the div bottomOptionRow px size and change based on that */
+@media screen and (max-width: 1000px) {
+  .checkboxRowAC {
+    flex-flow: row nowrap;
+    align-items: center;
+    white-space: nowrap;
+  }
+
+  .innerSizeValueAC {
+    flex-flow: column nowrap;
+    align-items: center;
+  }
+  .makeSpaceSizeAC {
+    margin-top: 2px;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 650px) {
+.fileInputRowAC {
+  flex-direction: column;
+}
+  .InputRowAC {
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .checkboxContainerAC,
+  .outerSizeValueAC,
+  .InputContainerAC {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .labelColAC {
+    flex-basis: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .labelRowAC {
+    flex-basis: 100%;
+  }
+
+  .checkboxContainerAC {
+    width: 100%;
+    align-items: flex-start;
+    justify-self: flex-start;
+    justify-content: center;
+  }
+
+  .checkboxRowAC {
+    font-size: larger;
+    flex-flow: row wrap;
+    border: 1px solid black;
+    margin-bottom: 5px;
+    border-radius: 4px;
+    padding: 5px;
+    width: 84vw;
+    height: 30px;
+    align-self: flex-start;
+  }
+
+  .outerSizeValueAC {
+    align-self: center;
+    width: 100%;
+  }
+}
+
+/*make pixel chart */
+
+.pixelFigure {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: var(--pxfigure-size);
+  background-color: gray;
+  width: var(--pxfigure-size);
+}
+
+.pixelWrapper {
+  display: grid;
+  gap: var(--pixel-gap);
+  width: var(--pxfigure-size);
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+}
+
+.pixelGrid {
+  display: grid;
+  grid-template-columns: repeat(var(--pixel-grid-amount), 1fr);
+  grid-template-rows: auto;
+  gap: var(--pixel-gap);
+  width: fit-content;
+  height: fit-content;
+}
+
+.pixelBox {
+  display: grid;
+  background-color: var(--reset-color);
+  width: var(--pixel-size);
+  height: var(--pixel-size);
+  /*on focus transition to scale up, with immediate unfocus*/
+  transition: transform 0.1s ease-in-out;
+}
+
+.pixelBox:focus-within {
+  outline: var(--pixel-gap) solid yellow;
+  transform: scale(1.1);
+  z-index: 1;
+}
+
+.PWtextArea {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 5px;
+  align-self: center;
+  justify-self: center;
+  height: 60px;
+  width: calc(var(--pxfigure-size) - 1vh);
+}
+
+.PWInputRow {
+  display: flex;
+  justify-content: space-around;
+  align-self: center;
+  align-content: center;
+  width: var(--pxfigure-size);
+  gap: 4%;
+}
+
+.PWInputAndPixelGrid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.PWCONTAINER {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2%;
+  border: 1px solid #000;
+  background-color: #ebfaff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  width: fit-content;
+  margin: 4%;
+}
+
+.radioPX {
+  display: flex;
+  align-self: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 1px;
+  padding: 1px;
+  margin-top: 1px;
+  white-space: nowrap;
+}
+
+.radioLabelPX {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: baseline;
+  width: 100%;
+}
+
+.innerSizeValuePX {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+}
+
+@media screen and (max-width: 650px) {
+  .PWInputRow {
+    flex-direction: column;
+  }
+  :root {
+    --pxfigure-size: 80vmin;
+  }
+}
+
+/* Start of RGB Color Selector */
+.ColorBox {
+  background-color: rgb(0,0,0);
+	width: 15em;
+	height: 15em;
+	border-style: solid;
+}
+
+.RGBSelectMain {
+  column-count: 2;
+  display: flex;
+  width: 75%;
+  justify-content: center;
+  border: 1px solid #000;
+  background-color: #ebfaff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  width: fit-content;
+  padding: 1%;
+  margin: 4%;
+}
+

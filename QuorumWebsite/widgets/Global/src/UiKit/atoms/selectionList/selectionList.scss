@@ -1,0 +1,176 @@
+@use '../../foundations/colors/Colors.scss' as *;
+
+$list-themes:(
+  light:(
+    container-background: map-get($colors, neutral, white),
+    container-border: map-get($colors, neutral, grey, 25),
+    container-color: map-get($colors, neutral, black),
+    item-background: map-get($colors, neutral, white),
+    item-border: map-get($colors, neutral, grey, 25),
+    item-color: map-get($colors, neutral, black),
+    item-hover-background: map-get($colors, quorum, blue, 150),
+    item-hover-border: map-get($colors, quorum, blue, 25),
+    item-hover-color: map-get($colors, neutral, white),
+    item-active-background: map-get($colors, neutral, white),
+    item-active-border: map-get($colors, quorum, blue, 100),
+    item-active-color: map-get($colors, neutral, black),
+    item-disabled-background: map-get($colors, neutral, grey, 10),
+    item-disabled-border: map-get($colors, neutral, grey, 25),
+    item-disabled-color: map-get($colors, neutral, grey, 100),
+    item-selected-background: map-get($colors, neutral, white),
+    item-selected-border: map-get($colors, quorum, blue, 100),
+    item-selected-color: map-get($colors, neutral, black),
+    item-selected-active-background: map-get($colors, neutral, white),
+    item-selected-active-border: map-get($colors, quorum, blue, 100),
+    item-selected-active-color: map-get($colors, neutral, white),
+  ),
+  dark:(
+    container-background: map-get($colors, neutral, grey, 75),
+    container-border: map-get($colors, neutral, grey, 25),
+    container-color: map-get($colors, neutral, white),
+    item-background: map-get($colors, neutral, grey, 75),
+    item-border: map-get($colors, neutral, grey, 25),
+    item-color: map-get($colors, neutral, white),
+    item-hover-background: map-get($colors, quorum, blue, 25),
+    item-hover-border: map-get($colors, quorum, blue, 25),
+    item-hover-color: map-get($colors, neutral, grey, 100),
+    item-active-background: map-get($colors, neutral, white),
+    item-active-border: map-get($colors, quorum, blue, 100),
+    item-active-color: map-get($colors, neutral, white),
+    item-disabled-background: map-get($colors, neutral, grey, 10),
+    item-disabled-border: map-get($colors, neutral, grey, 25),
+    item-disabled-color: map-get($colors, neutral, grey, 100),
+    item-selected-background: map-get($colors, neutral, white),
+    item-selected-border: map-get($colors, quorum, blue, 100),
+    item-selected-color: map-get($colors, neutral, white),
+    item-selected-active-background: map-get($colors, neutral, white),
+    item-selected-active-border: map-get($colors, quorum, blue, 100),
+    item-selected-active-color: map-get($colors, neutral, white),
+  ),
+  high-contrast:(
+    container-background: map-get($colors, neutral, black),
+    container-border: map-get($colors, neutral, grey, 25),
+    container-color: map-get($colors, neutral, white),
+    item-background: map-get($colors, neutral, black),
+    item-border: map-get($colors, neutral, grey, 25),
+    item-color: map-get($colors, neutral, white),
+    item-hover-background: map-get($colors, quorum, blue, 25),
+    item-hover-border: map-get($colors, quorum, blue, 25),
+    item-hover-color: map-get($colors, neutral, grey, 100),
+    item-active-background: map-get($colors, neutral, white),
+    item-active-border: map-get($colors, quorum, blue, 100),
+    item-active-color: map-get($colors, neutral, white),
+    item-disabled-background: map-get($colors, neutral, grey, 10),
+    item-disabled-border: map-get($colors, neutral, grey, 25),
+    item-disabled-color: map-get($colors, neutral, grey, 100),
+    item-selected-background: map-get($colors, neutral, white),
+    item-selected-border: map-get($colors, quorum, blue, 100),
+    item-selected-color: map-get($colors, neutral, white),
+    item-selected-active-background: map-get($colors, neutral, white),
+    item-selected-active-border: map-get($colors, quorum, blue, 100),
+    item-selected-active-color: map-get($colors, neutral, white),
+  ),
+);
+
+@each $theme, $theme-map in $list-themes {
+  //make the selection list classes
+  .selectionList__outer--container--#{$theme} {
+    width: initial;
+    border-radius: 16px;
+    margin-top: 8px;
+    height: 298px;
+    min-height: 200px;
+    padding: 16px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    background-color: map-get($theme-map, container-background);
+    border: 1px solid map-get($theme-map, container-border);
+    color: map-get($theme-map, container-color);
+  }
+  .selectionList__inner--container--#{$theme} {
+    width: auto;
+    overflow-y: auto;
+    height: 298px;
+    min-height: 200px;
+    background-color:inherit;
+    padding: 0;
+    border: none;
+    margin-left: 0;
+  }
+
+  .selectionList__item--#{$theme} {
+    align-items: center;
+    background-color: map-get($theme-map, item-background);
+    border-radius: 8px;
+    border: none;
+    box-sizing: border-box;
+    color: map-get($theme-map, item-color);
+    display: flex;
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 400;
+    gap: 8px;
+    height: 60px;
+    justify-content: space-between;
+    margin: 0;
+    padding: 8px 16px 8px 16px;
+    width: 100%;
+  }
+
+  .selectionList__item__icon--#{$theme} {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: map-get($theme-map, item-background);
+    border: 1px solid map-get($theme-map, item-border);
+    color: map-get($theme-map, item-color);
+  }
+
+  .selectionList__item--#{$theme}:hover {
+    background-color: map-get($theme-map, item-hover-background);
+    border: 1px solid map-get($theme-map, item-hover-border);
+    color: map-get($theme-map, item-hover-color);
+    font-weight: 700;
+  }
+
+  .selectionList__item--#{$theme}:focus-visible {
+    border: 1px solid map-get($theme-map, item-active-border);
+    outline: map-get($theme-map, item-active-border);
+    color: map-get($theme-map, item-active-color);
+  }
+
+  .selectionList__item--#{$theme}:disabled {
+    color: map-get($theme-map, item-disabled-color);
+  }
+
+  .selectionList__item--#{$theme}.selected {
+    color: map-get($theme-map, item-selected-color);
+  }
+
+  .selectionList__item--#{$theme}.selected:hover:focus-visible {
+    color: map-get($theme-map, item-selected-active-color);
+  }
+  .selectionList__item--#{$theme}.selected:hover {
+    color: map-get($theme-map, item-selected-active-color);
+  }
+
+  //make the scrollbar have transparent background and move it to the left
+  .selectionList__inner--container--#{$theme}::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+
+  .selectionList__inner--container--#{$theme}::-webkit-scrollbar-thumb {
+    background-color: map-get($theme-map, item-hover-background);
+    margin-right: 8px;
+    border-radius: 8px;
+  }
+
+  .selectionList__inner--container--#{$theme}::-webkit-scrollbar-thumb:hover {
+    background-color: map-get($theme-map, item-hover-background);
+  }
+
+  .selectionList__inner--container--#{$theme}::-webkit-scrollbar-thumb:active {
+    background-color: map-get($theme-map, item-hover-background);
+  }
+}

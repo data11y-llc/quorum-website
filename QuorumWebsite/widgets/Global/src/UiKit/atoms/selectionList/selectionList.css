@@ -1,0 +1,290 @@
+.selectionList__outer--container--light {
+  width: initial;
+  border-radius: 16px;
+  margin-top: 8px;
+  height: 298px;
+  min-height: 200px;
+  padding: 16px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(215, 215, 215);
+  color: rgb(0, 0, 0);
+}
+
+.selectionList__inner--container--light {
+  width: auto;
+  overflow-y: auto;
+  height: 298px;
+  min-height: 200px;
+  background-color: inherit;
+  padding: 0;
+  border: none;
+  margin-left: 0;
+}
+
+.selectionList__item--light {
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  display: flex;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  gap: 8px;
+  height: 60px;
+  justify-content: space-between;
+  margin: 0;
+  padding: 8px 16px 8px 16px;
+  width: 100%;
+}
+
+.selectionList__item__icon--light {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(215, 215, 215);
+  color: rgb(0, 0, 0);
+}
+
+.selectionList__item--light:hover {
+  background-color: rgb(18, 90, 119);
+  border: 1px solid rgb(172, 209, 223);
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+}
+
+.selectionList__item--light:focus-visible {
+  border: 1px solid rgb(6, 149, 208);
+  outline: rgb(6, 149, 208);
+  color: rgb(0, 0, 0);
+}
+
+.selectionList__item--light.selected {
+  color: rgb(0, 0, 0);
+}
+
+.selectionList__item--light.selected:hover:focus-visible {
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__item--light.selected:hover {
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__inner--container--light::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.selectionList__inner--container--light::-webkit-scrollbar-thumb {
+  background-color: rgb(18, 90, 119);
+  margin-right: 8px;
+  border-radius: 8px;
+}
+
+.selectionList__inner--container--light::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(18, 90, 119);
+}
+
+.selectionList__inner--container--light::-webkit-scrollbar-thumb:active {
+  background-color: rgb(18, 90, 119);
+}
+
+.selectionList__outer--container--dark {
+  width: initial;
+  border-radius: 16px;
+  margin-top: 8px;
+  height: 298px;
+  min-height: 200px;
+  padding: 16px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: rgb(54, 54, 55);
+  border: 1px solid rgb(215, 215, 215);
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__inner--container--dark {
+  width: auto;
+  overflow-y: auto;
+  height: 298px;
+  min-height: 200px;
+  background-color: inherit;
+  padding: 0;
+  border: none;
+  margin-left: 0;
+}
+
+.selectionList__item--dark {
+  align-items: center;
+  background-color: rgb(54, 54, 55);
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  display: flex;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  gap: 8px;
+  height: 60px;
+  justify-content: space-between;
+  margin: 0;
+  padding: 8px 16px 8px 16px;
+  width: 100%;
+}
+
+.selectionList__item__icon--dark {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgb(54, 54, 55);
+  border: 1px solid rgb(215, 215, 215);
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__item--dark:hover {
+  background-color: rgb(172, 209, 223);
+  border: 1px solid rgb(172, 209, 223);
+  font-weight: 700;
+}
+
+.selectionList__item--dark:focus-visible {
+  border: 1px solid rgb(6, 149, 208);
+  outline: rgb(6, 149, 208);
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__item--dark.selected {
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__item--dark.selected:hover:focus-visible {
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__item--dark.selected:hover {
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__inner--container--dark::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.selectionList__inner--container--dark::-webkit-scrollbar-thumb {
+  background-color: rgb(172, 209, 223);
+  margin-right: 8px;
+  border-radius: 8px;
+}
+
+.selectionList__inner--container--dark::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(172, 209, 223);
+}
+
+.selectionList__inner--container--dark::-webkit-scrollbar-thumb:active {
+  background-color: rgb(172, 209, 223);
+}
+
+.selectionList__outer--container--high-contrast {
+  width: initial;
+  border-radius: 16px;
+  margin-top: 8px;
+  height: 298px;
+  min-height: 200px;
+  padding: 16px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgb(215, 215, 215);
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__inner--container--high-contrast {
+  width: auto;
+  overflow-y: auto;
+  height: 298px;
+  min-height: 200px;
+  background-color: inherit;
+  padding: 0;
+  border: none;
+  margin-left: 0;
+}
+
+.selectionList__item--high-contrast {
+  align-items: center;
+  background-color: rgb(0, 0, 0);
+  border-radius: 8px;
+  border: none;
+  box-sizing: border-box;
+  color: rgb(255, 255, 255);
+  display: flex;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 400;
+  gap: 8px;
+  height: 60px;
+  justify-content: space-between;
+  margin: 0;
+  padding: 8px 16px 8px 16px;
+  width: 100%;
+}
+
+.selectionList__item__icon--high-contrast {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid rgb(215, 215, 215);
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__item--high-contrast:hover {
+  background-color: rgb(172, 209, 223);
+  border: 1px solid rgb(172, 209, 223);
+  font-weight: 700;
+}
+
+.selectionList__item--high-contrast:focus-visible {
+  border: 1px solid rgb(6, 149, 208);
+  outline: rgb(6, 149, 208);
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__item--high-contrast.selected {
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__item--high-contrast.selected:hover:focus-visible {
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__item--high-contrast.selected:hover {
+  color: rgb(255, 255, 255);
+}
+
+.selectionList__inner--container--high-contrast::-webkit-scrollbar {
+  width: 8px;
+  background-color: transparent;
+}
+
+.selectionList__inner--container--high-contrast::-webkit-scrollbar-thumb {
+  background-color: rgb(172, 209, 223);
+  margin-right: 8px;
+  border-radius: 8px;
+}
+
+.selectionList__inner--container--high-contrast::-webkit-scrollbar-thumb:hover {
+  background-color: rgb(172, 209, 223);
+}
+
+.selectionList__inner--container--high-contrast::-webkit-scrollbar-thumb:active {
+  background-color: rgb(172, 209, 223);
+}
+
+/*# sourceMappingURL=selectionList.css.map */

@@ -1,0 +1,211 @@
+@use '../../foundations/colors/Colors.scss' as *;
+
+$textField-theme:(
+  light:(
+    background: map-get($colors, neutral, white),
+    border: map-get($colors, neutral, grey, 65),
+    color: map-get($colors, neutral, black),
+    placeholder-color: map-get($colors, neutral, grey, 40),
+    disabled-background: map-get($colors, neutral, grey, 25),
+    disabled-border: map-get($colors, neutral, grey, 65),
+    disabled-color: map-get($colors, neutral, grey, 40),
+    error-border: map-get($colors, secondary, red, 100),
+    focus-border: map-get($colors, quorum, blue, 25),
+  ),
+  dark:(
+    background: map-get($colors, neutral, grey, 65),
+    border: map-get($colors, neutral, grey, 40),
+    color: map-get($colors, neutral, grey, 25),
+    placeholder-color: map-get($colors, neutral, grey, 25),
+    disabled-background: map-get($colors, neutral, grey, 85),
+    disabled-border: map-get($colors, neutral, grey, 40),
+    disabled-color: map-get($colors, neutral, grey, 50),
+    error-border: map-get($colors, attention, red, 25),
+    focus-border: map-get($colors, quorum, blue, 100),
+  ),
+  high-contrast:(
+    background: map-get($colors, neutral, black),
+    border: map-get($colors, neutral, grey, 25),
+    color: map-get($colors, neutral, white),
+    placeholder-color: map-get($colors, neutral, grey, 100),
+    disabled-background: map-get($colors, neutral, grey, 10),
+    disabled-border: map-get($colors, neutral, grey, 25),
+    disabled-color: map-get($colors, neutral, grey, 100),
+    error-border: map-get($colors, attention, red, 100),
+    focus-border: map-get($colors, quorum, blue, 100),
+  ),
+);
+
+$textField-size:(
+  sm:(
+    height: 32px,
+    padding: 0 8px,
+    font-size: 14px,
+    line-height: 16px,
+  ),
+  md:(
+    height: 40px,
+    padding: 0 12px,
+    font-size: 16px,
+    line-height: 20px,
+  ),
+  lg:(
+    height: 48px,
+    padding: 0 16px,
+    font-size: 18px,
+    line-height: 24px,
+  ),
+);
+
+@each $theme, $theme-map in $textField-theme {
+  @each $size, $size-map in $textField-size {
+    .textField--#{$size}--#{$theme} {
+      background-color: map-get($theme-map, background) !important;
+      border: 1px solid map-get($theme-map, border) !important;
+      color: map-get($theme-map, color) !important;
+      height: map-get($size-map, height);
+      border-radius: 4px;
+      padding: map-get($size-map, padding);
+      font-size: map-get($size-map, font-size);
+      line-height: map-get($size-map, line-height);
+      font-family: Montserrat, sans-serif;
+      font-weight: 400;
+      box-sizing: initial !important;
+    }
+
+    .textField--#{$size}--#{$theme}:disabled {
+      background-color: map-get($theme-map, disabled-background) !important;
+      border-color: map-get($theme-map, disabled-border) !important;
+      color: map-get($theme-map, disabled-color) !important;
+    }
+
+    .textField--#{$size}--#{$theme}:focus-visible {
+      border-color: map-get($theme-map, focus-border) !important;
+      color: map-get($theme-map, focus-color) !important;
+    }
+
+    .textField--#{$size}--#{$theme}::placeholder {
+      color: map-get($theme-map, placeholder-color) !important;
+    }
+      .textField--#{$size}--#{$theme}.error {
+      border-color: map-get($theme-map, error-border) !important;
+    }
+  }
+}
+
+//make with icon background on left
+@each $theme, $theme-map in $textField-theme {
+  @each $size, $size-map in $textField-size {
+    //cycle through all icons in ../icons/svg and set background image
+    @for $i from 1 through 3 {
+      $icon-file: '@/UiKit/atoms/icons/svg/icon#{$i}.svg';
+      @if file-exists($icon-file) {
+      .textField--#{$size}--#{$theme}--Licon#{$i} {
+        background-color: map-get($theme-map, background);
+        background-image: url($icon-file);
+        //position x, position y
+        background-position: 8px 50%;
+        background-repeat: no-repeat;
+        background-size: 16px;
+        border-radius: 4px;
+        border: 1px solid map-get($theme-map, border);
+        color: map-get($theme-map, color);
+        font-family: Montserrat, sans-serif;
+        font-size: map-get($size-map, font-size);
+        font-weight: 400;
+        height: map-get($size-map, height);
+        line-height: map-get($size-map, line-height);
+        padding-left: map-get($size-map, height);
+        padding: map-get($size-map, padding);
+        position: relative;
+      }
+
+        .textField--#{$size}--#{$theme}--Licon#{$i}.error {
+      border-color: map-get($theme-map, error-border);
+    }
+      .textField--#{$size}--#{$theme}--Licon#{$i}:disabled {
+        background-color: map-get($theme-map, disabled-background);
+        border-color: map-get($theme-map, disabled-border);
+        color: map-get($theme-map, disabled-color);
+      }
+
+      .textField--#{$size}--#{$theme}--Licon#{$i}:focus {
+        border-color: map-get($theme-map, focus-border);
+        color: map-get($theme-map, focus-color);
+      }
+
+      .textField--#{$size}--#{$theme}--Licon#{$i}::placeholder {
+        color: map-get($theme-map, placeholder-color);
+      }
+    }
+  }
+  }
+}
+
+//make with icon background on left
+@each $theme, $theme-map in $textField-theme {
+  @each $size, $size-map in $textField-size {
+    //cycle through all icons in ../icons/svg and set background image
+    @for $i from 1 through 3 {
+      $icon-file: '@/UiKit/atoms/icons/svg/icon#{$i}.svg';
+      @if file-exists($icon-file) {
+      .textField--#{$size}--#{$theme}--Ricon#{$i} {
+        background-color: map-get($theme-map, background);
+        background-image: url($icon-file);
+        // position x, position y
+        background-position: 98% 50%;
+        background-repeat: no-repeat;
+        background-size: 16px;
+        border-radius: 4px;
+        border: 1px solid map-get($theme-map, border);
+        color: map-get($theme-map, color);
+        font-family: Montserrat, sans-serif;
+        font-size: map-get($size-map, font-size);
+        font-weight: 400;
+        height: map-get($size-map, height);
+        line-height: map-get($size-map, line-height);
+        padding-right: map-get($size-map, height);
+        padding: map-get($size-map, padding);
+        position: relative;
+      }
+       .textField--#{$size}--#{$theme}--Ricon#{$i}.error {
+      border-color: map-get($theme-map, error-border);
+    }
+      .textField--#{$size}--#{$theme}--Ricon#{$i}:disabled {
+        background-color: map-get($theme-map, disabled-background);
+        border-color: map-get($theme-map, disabled-border);
+        color: map-get($theme-map, disabled-color);
+      }
+
+      .textField--#{$size}--#{$theme}--Ricon#{$i}:focus-visible {
+        border-color: map-get($theme-map, focus-border);
+        color: map-get($theme-map, focus-color);
+      }
+
+      .textField--#{$size}--#{$theme}--Ricon#{$i}::placeholder {
+        color: map-get($theme-map, placeholder-color);
+      }
+    }
+  }
+  }
+}
+
+$font-color:(
+light: #000000,
+dark: #FFFFFF,
+high-contrast: #FFFFFF,
+);
+
+//make outer container cycle through all font colors
+@each $color, $color-map in $font-color {
+  .textField--outerContainer--#{$color} {
+    color: $color-map;
+    display: flex;
+    align-content: center;
+    flex-direction: column;
+    height: fit-content;
+
+  }
+}
+
+

@@ -1,0 +1,321 @@
+:root {
+  --dc-accordian-width: 30%;
+}
+
+.dc-instructions {
+  padding: 10px;
+  border-radius: 5px;
+  color: #333;
+  font-size: 1.2em;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.dc-instructions h2 {
+  margin-top: 0;
+  font-size: 1.4em;
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+}
+.dc-instructions p {
+  margin-bottom: 10px;
+}
+
+.datacommons-table-wrapper {
+  font-family: "Montserrat", sans-serif;
+  height: fit-content;
+  max-height: 300px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  margin-bottom: 8px;
+  display: block;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  overflow: auto;
+}
+.datacommons-table-wrapper::-webkit-scrollbar {
+  width: 12px;
+}
+.datacommons-table-wrapper::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.no-right-border {
+  border-right: none !important;
+}
+
+.no-top-border {
+  border-top: none !important;
+}
+
+.no-bottom-border {
+  border-bottom: none !important;
+}
+
+.datacommons-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.datacommons-table thead {
+  position: sticky;
+  top: -1px;
+  z-index: 1;
+  background-color: white;
+  max-height: 50px !important;
+}
+.datacommons-table thead th {
+  padding: 10px;
+  text-align: center;
+  max-height: 50px !important;
+  color: #000;
+}
+.datacommons-table thead th:first-child {
+  border-top-left-radius: 7px;
+}
+.datacommons-table thead .datacommons-table-header {
+  font-weight: bold;
+  max-height: 50px !important;
+  background-color: #75BDDB;
+  color: #000;
+}
+.datacommons-table tbody .datacommons-table-row:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.datacommons-table tbody .datacommons-table-row td {
+  padding: 10px;
+  text-align: center;
+  color: #000;
+}
+.datacommons-table tbody .datacommons-table-row .datacommons-table-cell:last-child {
+  text-align: center;
+}
+
+.dc-main-container {
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  width: 100%;
+  min-height: 400px;
+}
+
+.dc-content-container {
+  background: #ffffff;
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+  border: 1px solid black;
+}
+
+.dc-accordian-container {
+  width: var(--dc-accordian-width);
+  border-right: 1px solid #e6e6e6;
+  box-sizing: border-box;
+}
+
+.dc-right-container {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - var(--dc-accordian-width));
+  box-sizing: border-box;
+  padding: 8px 16px;
+  row-gap: 8px;
+}
+
+.dc-variable-header-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  height: fit-content;
+  row-gap: 8px;
+  font-size: 1.2em;
+  font-family: "Montserrat", sans-serif;
+}
+
+.datacommons-variable-header {
+  color: #333;
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+  font-family: "Montserrat";
+}
+.datacommons-variable-header .datacommons-dcid-info {
+  color: #666;
+  font-size: 16px;
+  margin-top: 0.2em;
+  padding-left: 0.5em;
+}
+
+.QuorumOuterUIContainer.datacommons {
+  display: flex;
+  align-items: flex-start;
+  align-items: center;
+  border-radius: 8px;
+  border: 1px solid black;
+  height: 400px;
+  box-sizing: border-box;
+}
+
+.QuorumUIContainer.datacommons {
+  margin: 4px;
+  height: calc(100% - 8px);
+  border: none;
+  box-sizing: border-box;
+}
+
+.variableButtons.datacommons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 8px;
+  min-height: 100px;
+  row-gap: 8px;
+  column-gap: 8px;
+}
+.variableButtons button {
+  padding: 16px;
+  width: fit-content !important;
+}
+
+.accordion-item-leaf.datacommons {
+  height: fit-content;
+  text-align: left;
+}
+
+.accordion-item-branch.datacommons {
+  height: fit-content;
+  text-align: left;
+}
+
+.dc-searchDataDiv {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  width: 100%;
+  align-items: center;
+}
+
+.dc-submit-button {
+  margin-left: 5px;
+  margin-top: 20px;
+  min-width: 50px;
+  width: fit-content;
+  padding: 10px 12px;
+  border-radius: 4px;
+}
+
+.csvVariableButtonContainer {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 100px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 8px;
+}
+
+.date-input {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.date-input:focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.date-input::placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+.date-input:disabled {
+  background-color: #e9ecef;
+  opacity: 1;
+}
+
+.dcButtonText {
+  max-width: 420px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.dchidden {
+  display: none !important;
+}
+
+.csv-style-table {
+  border: 1px solid #dddddd;
+  width: 100%;
+  text-align: left;
+}
+.csv-style-table th, .csv-style-table td {
+  border: 1px solid #dddddd;
+  padding: 8px;
+}
+.csv-style-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* keep from collapsing onto itself */
+}
+
+.dc-csv-variable-heading {
+  text-align: left;
+  font-size: large;
+  font-weight: bold;
+  font-family: Montserrat;
+  border: none;
+}
+
+.dc-csv-edit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  column-gap: 8px;
+  width: 100%;
+}
+
+.dc-date-input-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 8px;
+  width: 100%;
+}
+
+.dc-csv-buttons-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  column-gap: 8px;
+  width: 100%;
+}
+
+/*# sourceMappingURL=style.css.map */

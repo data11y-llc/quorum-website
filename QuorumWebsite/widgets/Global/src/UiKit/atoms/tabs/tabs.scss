@@ -1,0 +1,276 @@
+@use '../../foundations/colors/Colors.scss' as *;
+
+
+
+$tab-themes:(
+  light:(
+    background: map-get($colors, neutral, white),
+    border: map-get($colors, neutral, grey, 25),
+    color: map-get($colors, neutral, black),
+    hover-background: map-get($colors, quorum, blue, 25),
+    hover-border: map-get($colors, quorum, blue, 25),
+    hover-color: map-get($colors, neutral, grey, 100),
+    active-background: map-get($colors, neutral, white),
+    active-border: map-get($colors, quoeum, blue, 100),
+    active-color: map-get($colors, neutral, black),
+    disabled-background: map-get($colors, neutral, grey, 10),
+    disabled-border: map-get($colors, neutral, grey, 25),
+    disabled-color: map-get($colors, neutral, grey, 100),
+    selected-background: map-get($colors, neutral, white),
+    selected-border: map-get($colors, quorum, blue, 100),
+    selected-color: map-get($colors, neutral, black),
+    selected-active-background: map-get($colors, neutral, white),
+    selected-active-border: map-get($colors, quorum, blue, 100),
+    selected-active-color: map-get($colors, neutral, black),
+  ),
+  dark:(
+    background: map-get($colors, neutral, grey, 75),
+    border: map-get($colors, neutral, grey, 85),
+    color: map-get($colors, neutral, white),
+    hover-background: map-get($colors, quorum, blue, 100),
+    hover-border: map-get($colors, quorum, blue, 50),
+    hover-color: map-get($colors, neutral, white),
+    active-background: map-get($colors, neutral, grey, 75),
+    active-border: map-get($colors, quorum, blue, 75),
+    active-color: map-get($colors, neutral, white),
+    disabled-background: map-get($colors, neutral, grey, 75),
+    disabled-border: map-get($colors, neutral, grey, 95),
+    disabled-color: map-get($colors, neutral, white),
+    selected-background: map-get($colors, neutral, grey, 75),
+    selected-border: map-get($colors, quorum, blue, 100),
+    selected-color: map-get($colors, neutral, white),
+    selected-active-background: map-get($colors, neutral, grey, 75),
+    selected-active-border: map-get($colors, quorum, blue, 75),
+    selected-active-color: map-get($colors, neutral, white),
+  ),
+  high-contrast:(
+    background: map-get($colors, neutral, black),
+    border: map-get($colors, neutral, white),
+    color: map-get($colors, neutral, white),
+    hover-background: #009FC1,
+    hover-border: map-get($colors, quorum, blue, 50),
+    hover-color: map-get($colors, neutral, white),
+    active-background: map-get($colors, neutral,black),
+    active-border: #009FC1,
+    active-color: map-get($colors, neutral, white),
+    disabled-background: map-get($colors, neutral, grey, 75),
+    disabled-border: map-get($colors, neutral, grey, 95),
+    disabled-color: map-get($colors, neutral, white),
+    selected-background: map-get($colors, neutral, black),
+    selected-border: map-get($colors, text, hico, blue),
+    selected-color: map-get($colors, neutral, white),
+    selected-active-background: map-get($colors, neutral, black),
+    selected-active-border: map-get($colors, quorum, blue, 75),
+    selected-active-color: map-get($colors, neutral, white),
+  ),
+);
+
+$tab-sizes:(
+  sm:(
+    width: 160px,
+    height: 35px,
+    line-height: 1.5,
+  ),
+  md: (
+    width: 200px,
+    height: 40px,
+    line-height: 1.5,
+  ),
+  lg: (
+    width: 240px,
+    height: 45px,
+    line-height: 1.5,
+  ),
+);
+  
+@each $theme, $colors in $tab-themes {
+.tab-list-#{$theme} {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  padding: 0;
+  background: map-get($colors, background);
+  // border-top: 1px solid map-get($colors, border);
+  margin: 0;
+  list-style: none;
+  border-radius: 4px 4px 0 0;
+}
+
+.tab-and-close-button-#{$theme} {
+  display: flex;
+  justify-content: flex-start;
+  color: inherit;
+  align-items: center;
+  border-radius: 4px 4px 0 0;
+  position: relative;
+  background: inherit;
+  border:none;
+  box-sizing: border-box;
+  font-size: inherit;
+  // border-bottom: inherit;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: calc(100% - 30px);
+  height: fit-content;
+  white-space: nowrap;
+  flex-direction: row;
+  //when user tabs to button run the following
+}
+
+.close-button-#{$theme}{
+  //make the button plain
+  display: flex;
+  align-items: center;
+  border: none;
+  box-sizing: inherit;
+  justify-content: center;
+  width: 30px;
+  height: inherit;
+  border-bottom: inherit;
+  padding: 0;
+  color: inherit;
+  background: inherit;
+
+  &:hover{
+    color: red;
+  }
+}
+
+.tab-plus-button-#{$theme}{
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  justify-content: center;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background: inherit;
+  
+  &:hover{
+    background: rgba(map-get($colors, hover-background), .4);
+    border: 2px solid map-get($colors, hover-border);
+    border-radius: 4px;
+  }
+
+  &:focus-visible{
+    outline: map-get($colors, hover-border) auto 2px;
+  }
+}
+.tab_text-#{$theme}{
+  display: flex;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  max-width: 100%;
+  background: linear-gradient(90deg, map-get($colors, color) 85%, map-get($colors,color) 85%, rgba(32, 32, 32, 0) 98.34%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+
+}
+  @each $size, $dimensions in $tab-sizes {
+    .tab-#{$size}-#{$theme} {
+      background-color: map-get($colors, background);
+      color: map-get($colors, color);
+      width: map-get($dimensions, width);
+      height: map-get($dimensions, height);
+      line-height: map-get($dimensions, line-height);
+      display: flex;
+      box-sizing: border-box;
+      justify-content: center;
+      align-items: center;
+      border: 1px solid map-get($colors, border);
+      border-bottom: none;
+      position: relative;
+      border-radius: 4px 4px 0 0;
+      text-align: center;
+
+      //make opacity fade out when text is too long
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+
+
+      //make font size fit the height of the tab
+      font-size: map-get($dimensions, height) * 0.5;
+
+      &:hover {
+        
+        background-color: map-get($colors, hover-background);
+        border: map-get($colors, hover-border);
+        color: map-get($colors, hover-color);
+
+
+        $width: map-get($dimensions, width);
+
+        width: fit-content;
+        min-width: $width;
+        overflow: hidden;
+
+         .tab_text-#{$theme} {
+          background: none;
+          -webkit-background-clip: initial;
+          -webkit-text-fill-color: initial;
+          background-clip: initial;
+          color: map-get($colors, hover-color);
+        }
+      }
+
+
+      //make on focus make text visible like in hover
+      &:focus-within {
+        $width: map-get($dimensions, width);
+
+        width: fit-content;
+        min-width: $width;
+        overflow: hidden;
+
+         .tab_text-#{$theme} {
+          background: none;
+          -webkit-background-clip: initial;
+          -webkit-text-fill-color: initial;
+          background-clip: initial;
+          color: map-get($colors, hover-color);
+        }
+
+      }
+      
+
+      &:active {
+        background-color: map-get($colors, active-background);
+        border: map-get($colors, active-border);
+        color: map-get($colors, active-color);
+      }
+
+      &:disabled {
+        background-color: map-get($colors, disabled-background);
+        border: map-get($colors, disabled-border);
+        color: map-get($colors, disabled-color);
+      }
+
+      &.tab_selected {
+        background-color: map-get($colors, selected-background);
+        // border: none;
+        border-bottom: 2px solid map-get($colors, selected-border);
+        color: map-get($colors, selected-color);
+      }
+
+      &.tab_selected:active {
+        background-color: map-get($colors, selected-active-background);
+        border: map-get($colors, selected-active-border);
+        color: map-get($colors, selected-active-color);
+      }
+    }
+  }
+}
+
+.new-tab-button-full-width {
+  width: 100%;
+}
+

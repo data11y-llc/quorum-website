@@ -1,0 +1,252 @@
+//Mobile:
+// Grid— 8px
+// Gutter— 16px
+// No. of Columns— 6
+// Margins— 24px
+// Border Radius— multiples of 4, (ex. 4px, 8px, 16px) // Column Type— stretch
+
+//TABLET:
+// Grid— 8px
+// Gutter— 24px
+// No. of Columns— 6
+// Margins— 40px
+// Border Radius— multiples of 4, (ex. 4px, 8px, 16px) // Column Type— stretch
+
+//Desktop:
+// Grid— 8px
+// Gutter— 24px
+// No. of Columns— 12
+// Margins— 40px
+// Border Radius— multiples of 4, (ex. 4px, 8px, 16px) // Column Type— stretch
+@use '../colors/Colors.scss' as *;
+
+$container-sizes: (
+  mobile: (grid: 8px,
+    gutter: 16px,
+    columns: 6,
+    margin: 24px,
+    border-radius: 4px,
+    column-type: stretch,
+    height: 624px,
+    width: 326px,
+    min-width: 320px,
+  ),
+  tablet: (grid: 8px,
+    gutter: 24px,
+    columns: 6,
+    margin: 40px,
+    border-radius: 4px,
+    column-type: stretch,
+    height: 624px,
+    width: 768px,
+  ),
+  desktop: (grid: 8px,
+    gutter: 24px,
+    columns: 12,
+    margin: 40px,
+    border-radius: 4px,
+    column-type: stretch,
+    height: 624px,
+    width: 1090px,
+  ),
+);
+
+@each $size,
+$size-map in $container-sizes {
+  .container--grid--#{$size} {
+    display: grid;
+    grid-template-columns: repeat(map-get($size-map, columns), 1fr);
+    grid-gap: map-get($size-map, gutter);
+    margin: map-get($size-map, margin);
+    border-radius: map-get($size-map, border-radius);
+    height: map-get($size-map, height);
+    max-width: map-get($size-map, width);
+    justify-items: map-get($size-map, column-type);
+    grid-auto-flow: dense;
+    //make rows auto
+    grid-auto-rows: minmax(0, auto);
+  }
+}
+
+.container--grid--responsive {
+  // Default styles for mobile devices
+  display: grid;
+  grid-template-columns: repeat(map-get(map-get($container-sizes, mobile), columns), 1fr);
+  grid-gap: map-get(map-get($container-sizes, mobile), gutter);
+  margin: map-get(map-get($container-sizes, mobile), margin);
+  border-radius: map-get(map-get($container-sizes, mobile), border-radius);
+  height: map-get(map-get($container-sizes, mobile), height);
+  max-width: map-get(map-get($container-sizes, mobile), width);
+  justify-items: map-get(map-get($container-sizes, mobile), column-type);
+  min-width: map-get(map-get($container-sizes, mobile), min-width);
+  grid-auto-flow: dense;
+  // Make rows auto
+  grid-auto-rows: minmax(0, auto);
+
+  // Media query for tablet devices
+  @media only screen and (min-width: #{map-get(map-get($container-sizes, tablet), width)}) {
+    grid-template-columns: repeat(map-get(map-get($container-sizes, tablet), columns), 1fr);
+    grid-gap: map-get(map-get($container-sizes, tablet), gutter);
+    margin: map-get(map-get($container-sizes, tablet), margin);
+    border-radius: map-get(map-get($container-sizes, tablet), border-radius);
+    height: map-get(map-get($container-sizes, tablet), height);
+    max-width: map-get(map-get($container-sizes, tablet), width);
+    justify-items: map-get(map-get($container-sizes, tablet), column-type);
+    //make min width 0
+    min-width: 0;
+  }
+
+  // Media query for desktop devices
+  @media only screen and (min-width: #{map-get(map-get($container-sizes, desktop), width)}) {
+    grid-template-columns: repeat(map-get(map-get($container-sizes, desktop), columns), 1fr);
+    grid-gap: map-get(map-get($container-sizes, desktop), gutter);
+    margin: map-get(map-get($container-sizes, desktop), margin);
+    border-radius: map-get(map-get($container-sizes, desktop), border-radius);
+    height: map-get(map-get($container-sizes, desktop), height);
+    max-width: map-get(map-get($container-sizes, desktop), width);
+    justify-items: map-get(map-get($container-sizes, desktop), column-type);
+    min-width: 0;
+  }
+}
+
+//make flex container
+
+@each $size,
+$size-map in $container-sizes {
+  .container--flex--#{$size} {
+    display: flex;
+    flex-wrap: wrap;
+    margin: map-get($size-map, margin);
+    border-radius: map-get($size-map, border-radius);
+    height: map-get($size-map, height);
+    max-width: map-get($size-map, width);
+    justify-content: map-get($size-map, column-type);
+  }
+}
+
+.container--flex--responsive {
+  // Default styles for mobile devices
+  display: flex;
+  flex-wrap: wrap;
+  margin: map-get(map-get($container-sizes, mobile), margin);
+  border-radius: map-get(map-get($container-sizes, mobile), border-radius);
+  height: map-get(map-get($container-sizes, mobile), height);
+  max-width: map-get(map-get($container-sizes, mobile), width);
+  justify-content: map-get(map-get($container-sizes, mobile), column-type);
+  min-width: map-get(map-get($container-sizes, mobile), min-width);
+
+  // Media query for tablet devices
+  @media only screen and (min-width: #{map-get(map-get($container-sizes, tablet), width)}) {
+    margin: map-get(map-get($container-sizes, tablet), margin);
+    border-radius: map-get(map-get($container-sizes, tablet), border-radius);
+    height: map-get(map-get($container-sizes, tablet), height);
+    max-width: map-get(map-get($container-sizes, tablet), width);
+    justify-content: map-get(map-get($container-sizes, tablet), column-type);
+    //make min width 0
+    min-width: 0;
+  }
+
+  // Media query for desktop devices
+  @media only screen and (min-width: #{map-get(map-get($container-sizes, desktop), width)}) {
+    margin: map-get(map-get($container-sizes, desktop), margin);
+    border-radius: map-get(map-get($container-sizes, desktop), border-radius);
+    height: map-get(map-get($container-sizes, desktop), height);
+    max-width: map-get(map-get($container-sizes, desktop), width);
+    justify-content: map-get(map-get($container-sizes, desktop), column-type);
+    min-width: 0;
+  }
+}
+
+// .flex-row {
+//   display: flex;
+//   flex-grow: 0;
+//   flex-direction: row;
+//   gap: 32px;
+//   justify-content: space-evenly;
+//   align-items: flex-start;
+//   padding: 0 32px;
+//   align-content: center;
+// }
+
+// .flex-row-nowrap {
+//   display: flex;
+//   flex-grow: 0;
+//   flex-direction: row;
+//   flex-wrap: nowrap;
+//   gap: 32px;
+//   justify-content: space-evenly;
+//   align-items: flex-start;
+//   padding: 0 32px;
+//   align-content: center;
+// }
+
+.option-row {
+  display: grid;
+  grid-gap: 32px; // The gap between grid items
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); // Assuming a child needs at least 200px
+  padding: 0 32px;
+  justify-items: center;
+
+  @media (max-width: 500px) {
+    // A breakpoint that suits your layout
+    grid-template-columns: repeat(2, 1fr); // If the viewport is 500px or less, limit to 2 items per row
+  }
+}
+
+.QuorumUIContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  height: 50vh;
+  min-height: 100px;
+  max-height: 1000px;
+  width: 100%;
+  border-top: 1px solid map-get($colors, quorum, blue, 100);
+  border-bottom: 1px solid map-get($colors, quorum, blue, 100);
+  background-color: white;
+  font-family: Montserrat, sans-serif;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 500px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 900;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+  &.open {
+    opacity: 1;
+    visibility: visible;
+  }
+}

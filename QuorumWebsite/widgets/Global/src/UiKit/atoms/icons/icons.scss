@@ -1,0 +1,38 @@
+@use '../../foundations/colors/Colors.scss' as *;
+
+$size-1: 16px;
+$size-2: 24px;
+$size-3: 32px;
+$size-4: 40px;
+
+$data11y-icon-sizes: (
+  'size-1': $size-1,
+  'size-2': $size-2,
+  'size-3': $size-3,
+  'size-4': $size-4,
+);
+
+@mixin get-color-classes($map, $parent-selector: '') {
+  @each $key, $value in $map {
+    $selector: if($parent-selector == '', $key, #{$parent-selector}__#{$key});
+    //turn rgb(0, 0, 0) into  a string
+    $valueChecker: if(type-of($value) == color, str-slice(to-string($value), 4, -1), $value);
+    @if type-of($value) == map {
+      @include get-color-classes($value, $selector);
+    }
+    @else if type-of($value) == string or type-of($value) == color and str-index($valueChecker, 'rgb') != null {
+      @each $sizeKey, $sizeValue in $data11y-icon-sizes {
+        .icon-#{$selector}-#{$sizeKey} {
+          width: $sizeValue;
+          min-width: $sizeValue;
+          min-height: $sizeValue;
+          height: $sizeValue;
+          fill: $value;
+        }
+      }
+    }
+  }
+}
+
+@include get-color-classes($colors);
+

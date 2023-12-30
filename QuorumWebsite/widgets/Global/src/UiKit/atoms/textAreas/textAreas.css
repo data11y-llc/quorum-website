@@ -1,0 +1,514 @@
+.textbox_Wxsm_Hsm {
+  height: 32px;
+  width: 60px;
+  font-size: 19.2px;
+}
+
+.textbox_Wsm_Hsm {
+  height: 32px;
+  width: 96px;
+  font-size: 19.2px;
+}
+
+.textbox_Wmd_Hsm {
+  height: 32px;
+  width: 192px;
+  font-size: 19.2px;
+}
+
+.textbox_Wlg_Hsm {
+  height: 32px;
+  width: 384px;
+  font-size: 19.2px;
+}
+
+.textbox_Wxlg_Hsm {
+  height: 32px;
+  width: 512px;
+  font-size: 19.2px;
+}
+
+.textbox_Wxxlg_Hsm {
+  height: 32px;
+  width: 768px;
+  font-size: 19.2px;
+}
+
+.textbox_Wxsm_Hmd {
+  height: 40px;
+  width: 60px;
+  font-size: 24px;
+}
+
+.textbox_Wsm_Hmd {
+  height: 40px;
+  width: 96px;
+  font-size: 24px;
+}
+
+.textbox_Wmd_Hmd {
+  height: 40px;
+  width: 192px;
+  font-size: 24px;
+}
+
+.textbox_Wlg_Hmd {
+  height: 40px;
+  width: 384px;
+  font-size: 24px;
+}
+
+.textbox_Wxlg_Hmd {
+  height: 40px;
+  width: 512px;
+  font-size: 24px;
+}
+
+.textbox_Wxxlg_Hmd {
+  height: 40px;
+  width: 768px;
+  font-size: 24px;
+}
+
+.textbox_Wxsm_Hlg {
+  height: 48px;
+  width: 60px;
+  font-size: 28.8px;
+}
+
+.textbox_Wsm_Hlg {
+  height: 48px;
+  width: 96px;
+  font-size: 28.8px;
+}
+
+.textbox_Wmd_Hlg {
+  height: 48px;
+  width: 192px;
+  font-size: 28.8px;
+}
+
+.textbox_Wlg_Hlg {
+  height: 48px;
+  width: 384px;
+  font-size: 28.8px;
+}
+
+.textbox_Wxlg_Hlg {
+  height: 48px;
+  width: 512px;
+  font-size: 28.8px;
+}
+
+.textbox_Wxxlg_Hlg {
+  height: 48px;
+  width: 768px;
+  font-size: 28.8px;
+}
+
+.textarea--sm--light {
+  height: 112px;
+  width: 192px;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255) !important;
+  border: 1px solid rgb(64, 64, 64) !important;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--sm--light:disabled {
+  background-color: rgb(215, 215, 215) !important;
+  border-color: rgb(64, 64, 64) !important;
+  color: rgb(114, 114, 114) !important;
+}
+
+.textarea--sm--light:focus-visible {
+  border-color: rgb(172, 209, 223) !important;
+  color: !important;
+}
+
+.textarea--sm--light::placeholder {
+  color: rgb(114, 114, 114) !important;
+}
+
+.textarea--sm--light.error {
+  border-color: rgb(148, 9, 1) !important;
+}
+
+.textarea--md--light {
+  height: 224px;
+  width: 384px;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255) !important;
+  border: 1px solid rgb(64, 64, 64) !important;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--md--light:disabled {
+  background-color: rgb(215, 215, 215) !important;
+  border-color: rgb(64, 64, 64) !important;
+  color: rgb(114, 114, 114) !important;
+}
+
+.textarea--md--light:focus-visible {
+  border-color: rgb(172, 209, 223) !important;
+  color: !important;
+}
+
+.textarea--md--light::placeholder {
+  color: rgb(114, 114, 114) !important;
+}
+
+.textarea--md--light.error {
+  border-color: rgb(148, 9, 1) !important;
+}
+
+.textarea--lg--light {
+  height: 298.67px;
+  width: 512px;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255) !important;
+  border: 1px solid rgb(64, 64, 64) !important;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--lg--light:disabled {
+  background-color: rgb(215, 215, 215) !important;
+  border-color: rgb(64, 64, 64) !important;
+  color: rgb(114, 114, 114) !important;
+}
+
+.textarea--lg--light:focus-visible {
+  border-color: rgb(172, 209, 223) !important;
+  color: !important;
+}
+
+.textarea--lg--light::placeholder {
+  color: rgb(114, 114, 114) !important;
+}
+
+.textarea--lg--light.error {
+  border-color: rgb(148, 9, 1) !important;
+}
+
+.textarea--xlg--light {
+  height: 448px;
+  width: 768px;
+  box-sizing: border-box;
+  background-color: rgb(255, 255, 255) !important;
+  border: 1px solid rgb(64, 64, 64) !important;
+  color: rgb(0, 0, 0) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--xlg--light:disabled {
+  background-color: rgb(215, 215, 215) !important;
+  border-color: rgb(64, 64, 64) !important;
+  color: rgb(114, 114, 114) !important;
+}
+
+.textarea--xlg--light:focus-visible {
+  border-color: rgb(172, 209, 223) !important;
+  color: !important;
+}
+
+.textarea--xlg--light::placeholder {
+  color: rgb(114, 114, 114) !important;
+}
+
+.textarea--xlg--light.error {
+  border-color: rgb(148, 9, 1) !important;
+}
+
+.textarea--sm--dark {
+  height: 112px;
+  width: 192px;
+  box-sizing: border-box;
+  background-color: rgb(64, 64, 64) !important;
+  border: 1px solid rgb(114, 114, 114) !important;
+  color: rgb(215, 215, 215) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--sm--dark:disabled {
+  background-color: rgb(43, 43, 43) !important;
+  border-color: rgb(114, 114, 114) !important;
+  color: rgb(101, 101, 101) !important;
+}
+
+.textarea--sm--dark:focus-visible {
+  border-color: rgb(6, 149, 208) !important;
+  color: !important;
+}
+
+.textarea--sm--dark::placeholder {
+  color: rgb(215, 215, 215) !important;
+}
+
+.textarea--sm--dark.error {
+  border-color: rgb(255, 116, 116) !important;
+}
+
+.textarea--md--dark {
+  height: 224px;
+  width: 384px;
+  box-sizing: border-box;
+  background-color: rgb(64, 64, 64) !important;
+  border: 1px solid rgb(114, 114, 114) !important;
+  color: rgb(215, 215, 215) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--md--dark:disabled {
+  background-color: rgb(43, 43, 43) !important;
+  border-color: rgb(114, 114, 114) !important;
+  color: rgb(101, 101, 101) !important;
+}
+
+.textarea--md--dark:focus-visible {
+  border-color: rgb(6, 149, 208) !important;
+  color: !important;
+}
+
+.textarea--md--dark::placeholder {
+  color: rgb(215, 215, 215) !important;
+}
+
+.textarea--md--dark.error {
+  border-color: rgb(255, 116, 116) !important;
+}
+
+.textarea--lg--dark {
+  height: 298.67px;
+  width: 512px;
+  box-sizing: border-box;
+  background-color: rgb(64, 64, 64) !important;
+  border: 1px solid rgb(114, 114, 114) !important;
+  color: rgb(215, 215, 215) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--lg--dark:disabled {
+  background-color: rgb(43, 43, 43) !important;
+  border-color: rgb(114, 114, 114) !important;
+  color: rgb(101, 101, 101) !important;
+}
+
+.textarea--lg--dark:focus-visible {
+  border-color: rgb(6, 149, 208) !important;
+  color: !important;
+}
+
+.textarea--lg--dark::placeholder {
+  color: rgb(215, 215, 215) !important;
+}
+
+.textarea--lg--dark.error {
+  border-color: rgb(255, 116, 116) !important;
+}
+
+.textarea--xlg--dark {
+  height: 448px;
+  width: 768px;
+  box-sizing: border-box;
+  background-color: rgb(64, 64, 64) !important;
+  border: 1px solid rgb(114, 114, 114) !important;
+  color: rgb(215, 215, 215) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--xlg--dark:disabled {
+  background-color: rgb(43, 43, 43) !important;
+  border-color: rgb(114, 114, 114) !important;
+  color: rgb(101, 101, 101) !important;
+}
+
+.textarea--xlg--dark:focus-visible {
+  border-color: rgb(6, 149, 208) !important;
+  color: !important;
+}
+
+.textarea--xlg--dark::placeholder {
+  color: rgb(215, 215, 215) !important;
+}
+
+.textarea--xlg--dark.error {
+  border-color: rgb(255, 116, 116) !important;
+}
+
+.textarea--sm--high-contrast {
+  height: 112px;
+  width: 192px;
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0) !important;
+  border: 1px solid rgb(215, 215, 215) !important;
+  color: rgb(255, 255, 255) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--sm--high-contrast:disabled {
+  background-color: rgb(246, 246, 247) !important;
+  border-color: rgb(215, 215, 215) !important;
+  color: !important;
+}
+
+.textarea--sm--high-contrast:focus-visible {
+  border-color: rgb(6, 149, 208) !important;
+  color: !important;
+}
+
+.textarea--sm--high-contrast::placeholder {
+  color: !important;
+}
+
+.textarea--sm--high-contrast.error {
+  border-color: rgb(255, 0, 0) !important;
+}
+
+.textarea--md--high-contrast {
+  height: 224px;
+  width: 384px;
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0) !important;
+  border: 1px solid rgb(215, 215, 215) !important;
+  color: rgb(255, 255, 255) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--md--high-contrast:disabled {
+  background-color: rgb(246, 246, 247) !important;
+  border-color: rgb(215, 215, 215) !important;
+  color: !important;
+}
+
+.textarea--md--high-contrast:focus-visible {
+  border-color: rgb(6, 149, 208) !important;
+  color: !important;
+}
+
+.textarea--md--high-contrast::placeholder {
+  color: !important;
+}
+
+.textarea--md--high-contrast.error {
+  border-color: rgb(255, 0, 0) !important;
+}
+
+.textarea--lg--high-contrast {
+  height: 298.67px;
+  width: 512px;
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0) !important;
+  border: 1px solid rgb(215, 215, 215) !important;
+  color: rgb(255, 255, 255) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--lg--high-contrast:disabled {
+  background-color: rgb(246, 246, 247) !important;
+  border-color: rgb(215, 215, 215) !important;
+  color: !important;
+}
+
+.textarea--lg--high-contrast:focus-visible {
+  border-color: rgb(6, 149, 208) !important;
+  color: !important;
+}
+
+.textarea--lg--high-contrast::placeholder {
+  color: !important;
+}
+
+.textarea--lg--high-contrast.error {
+  border-color: rgb(255, 0, 0) !important;
+}
+
+.textarea--xlg--high-contrast {
+  height: 448px;
+  width: 768px;
+  box-sizing: border-box;
+  background-color: rgb(0, 0, 0) !important;
+  border: 1px solid rgb(215, 215, 215) !important;
+  color: rgb(255, 255, 255) !important;
+  border-radius: 4px;
+  font-family: Montserrat, sans-serif;
+  font-weight: 400;
+}
+
+.textarea--xlg--high-contrast:disabled {
+  background-color: rgb(246, 246, 247) !important;
+  border-color: rgb(215, 215, 215) !important;
+  color: !important;
+}
+
+.textarea--xlg--high-contrast:focus-visible {
+  border-color: rgb(6, 149, 208) !important;
+  color: !important;
+}
+
+.textarea--xlg--high-contrast::placeholder {
+  color: !important;
+}
+
+.textarea--xlg--high-contrast.error {
+  border-color: rgb(255, 0, 0) !important;
+}
+
+.textarea_sm {
+  height: 112px;
+  width: 192px;
+  box-sizing: border-box;
+}
+
+.textarea_md {
+  height: 224px;
+  width: 384px;
+  box-sizing: border-box;
+}
+
+.textarea_lg {
+  height: 298.67px;
+  width: 512px;
+  box-sizing: border-box;
+}
+
+.textarea_xlg {
+  height: 448px;
+  width: 768px;
+  box-sizing: border-box;
+}
+
+.textarea--outerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+}
+
+/*# sourceMappingURL=textAreas.css.map */

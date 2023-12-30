@@ -7,4 +7,8 @@ sitemap.xml
 #ignore ./html/style/output.css
 
 html/style/output.css
+widgets/Global/node_modules/
 
+#ignore all .DS_Store files
+
+**/.DS_Store

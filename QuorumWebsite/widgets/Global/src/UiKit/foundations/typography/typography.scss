@@ -1,0 +1,102 @@
+$Typography: (
+  title: (
+    display1: (
+      font-size: 48px,
+      font-weight: bold,
+      font-family: 'Montserrat',
+    ),
+    displaySub: (
+      font-size: 32px,
+      font-weight: medium,
+      font-family: 'Montserrat',
+    ),
+    title1: (
+      font-size: 32px,
+      font-weight: bold,
+      font-family: 'Montserrat',
+    ),
+    title2: (
+      font-size: 24px,
+      font-weight: bold,
+      font-family: 'Montserrat',
+    ),
+    title3: (
+      font-size: 20px,
+      font-weight: bold,
+      font-family: 'Montserrat',
+    ),
+    title4: (
+      font-size: 18px,
+      font-weight: bold,
+      font-family: 'Montserrat',
+    ),
+    title5: (
+      font-size: 16px,
+      font-weight: bold,
+      font-family: 'Montserrat',
+    ),
+  ),
+  text: (
+    xlText: (
+      font-size: 20px,
+      font-weight: normal,
+      font-family: 'Montserrat',
+    ),
+    lgText: (
+      font-size: 18px,
+      font-weight: normal,
+      font-family: 'Montserrat',
+    ),
+    mText: (
+      font-size: 16px,
+      font-weight: normal,
+      font-family: 'Montserrat',
+    ),
+    smText: (
+      font-size: 14px,
+      font-weight: normal,
+      font-family: 'Montserrat',
+    ),
+    xsText: (
+      font-size: 12px,
+      font-weight: normal,
+      font-family: 'Montserrat',
+    ),
+  ),
+  code: (
+    lgText: (
+      font-size: 18px,
+      font-weight: normal,
+      font-family: 'Consolas',
+    ),
+    mText: (
+      font-size: 16px,
+      font-weight: normal,
+      font-family: 'Consolas',
+    ),
+    smText: (
+      font-size: 14px,
+      font-weight: normal,
+      font-family: 'Consolas',
+    ),
+    xsText: (
+      font-size: 12px,
+      font-weight: normal,
+      font-family: 'Consolas',
+    ),
+  ),
+);
+
+//make classes out of the map
+
+@each $type, $value in $Typography {
+  @each $name, $value in $value {
+    .typo_#{$type}-#{$name} {
+      font-size: map-get($value, font-size);
+      font-weight: map-get($value, font-weight);
+      font-family: map-get($value, font-family);
+    }
+  }
+}
+
+

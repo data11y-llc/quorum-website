@@ -1,0 +1,355 @@
+:root {
+  --ide-theme-checkbox: #75BDDB;
+  --ide-theme-slider: #75BDDB;
+  --ide-text-color: #000;
+  --tab-scrollbar-gutter-background: rgba(246, 246, 246, 1);
+  --tab-scrollbar-thumb-background: rgba(215, 215, 215, 1);
+  --tab-scrollbar-thumb-hover-color: #AAA;
+}
+
+.data11y-code.light .token.comment {
+  color: rgb(101, 101, 101);
+}
+
+.data11y-code.light .token.property,
+.data11y-code.light .token.tag,
+.data11y-code.light .token.number,
+.data11y-code.light .token.constant,
+.data11y-code.light .token.symbol,
+.data11y-code.light .token.deleted {
+  color: rgb(204, 5, 55);
+}
+
+.data11y-code.light .token.selector,
+.data11y-code.light .token.attr-name,
+.data11y-code.light .token.string,
+.data11y-code.light .token.char,
+.data11y-code.light .token.builtin,
+.data11y-code.light .token.inserted {
+  color: rgb(130, 0, 101);
+}
+
+.data11y-code.light .token.operator,
+.data11y-code.light .token.entity,
+.data11y-code.light .token.url,
+.data11y-code.light .language-css .token.string,
+.data11y-code.light .style .token.string {
+  color: rgb(157, 75, 0);
+}
+
+.data11y-code.light .token.atrule,
+.data11y-code.light .token.boolean,
+.data11y-code.light .token.attr-value,
+.data11y-code.light .token.keyword {
+  color: rgb(16, 69, 172);
+}
+
+.data11y-code.light .token.function,
+.data11y-code.light .token.class-name {
+  color: rgb(41, 116, 6);
+}
+
+.data11y-code.light .token.regex,
+.data11y-code.light .token.important,
+.data11y-code.light .token.variable {
+  color: rgb(130, 0, 101);
+}
+
+.data11y-code.dark .token.comment {
+  color: rgb(173, 173, 173);
+}
+
+.data11y-code.dark .token.property,
+.data11y-code.dark .token.tag,
+.data11y-code.dark .token.number,
+.data11y-code.dark .token.constant,
+.data11y-code.dark .token.symbol,
+.data11y-code.dark .token.deleted {
+  color: rgb(249, 161, 198);
+}
+
+.data11y-code.dark .token.selector,
+.data11y-code.dark .token.attr-name,
+.data11y-code.dark .token.string,
+.data11y-code.dark .token.char,
+.data11y-code.dark .token.builtin,
+.data11y-code.dark .token.inserted {
+  color: rgb(215, 154, 253);
+}
+
+.data11y-code.dark .token.operator,
+.data11y-code.dark .token.entity,
+.data11y-code.dark .token.url,
+.data11y-code.dark .language-css .token.string,
+.data11y-code.dark .style .token.string {
+  color: rgb(249, 161, 198);
+}
+
+.data11y-code.dark .token.atrule,
+.data11y-code.dark .token.boolean,
+.data11y-code.dark .token.attr-value,
+.data11y-code.dark .token.keyword {
+  color: rgb(172, 209, 223);
+}
+
+.data11y-code.dark .token.function,
+.data11y-code.dark .token.class-name {
+  color: rgb(175, 254, 217);
+}
+
+.data11y-code.dark .token.regex,
+.data11y-code.dark .token.important,
+.data11y-code.dark .token.variable {
+  color: rgb(215, 154, 253);
+}
+
+.data11y-code.high-contrast .token.comment {
+  color: rgb(229, 230, 230);
+}
+
+.data11y-code.high-contrast .token.property,
+.data11y-code.high-contrast .token.tag,
+.data11y-code.high-contrast .token.number,
+.data11y-code.high-contrast .token.constant,
+.data11y-code.high-contrast .token.symbol,
+.data11y-code.high-contrast .token.deleted {
+  color: rgb(254, 124, 217);
+}
+
+.data11y-code.high-contrast .token.selector,
+.data11y-code.high-contrast .token.attr-name,
+.data11y-code.high-contrast .token.string,
+.data11y-code.high-contrast .token.char,
+.data11y-code.high-contrast .token.builtin,
+.data11y-code.high-contrast .token.inserted {
+  color: rgb(255, 230, 0);
+}
+
+.data11y-code.high-contrast .token.operator,
+.data11y-code.high-contrast .token.entity,
+.data11y-code.high-contrast .token.url,
+.data11y-code.high-contrast .language-css .token.string,
+.data11y-code.high-contrast .style .token.string {
+  color: rgb(255, 168, 0);
+}
+
+.data11y-code.high-contrast .token.atrule,
+.data11y-code.high-contrast .token.boolean,
+.data11y-code.high-contrast .token.attr-value,
+.data11y-code.high-contrast .token.keyword {
+  color: rgb(58, 220, 255);
+}
+
+.data11y-code.high-contrast .token.function,
+.data11y-code.high-contrast .token.class-name {
+  color: rgb(0, 255, 148);
+}
+
+.data11y-code.high-contrast .token.regex,
+.data11y-code.high-contrast .token.important,
+.data11y-code.high-contrast .token.variable {
+  color: rgb(190, 11, 0);
+}
+
+.hide-scrollbar {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -ms-overflow-style: none; /* for Internet Explorer */
+  scrollbar-width: none; /* for Firefox */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.hide-scrollbar-y {
+  /* make scrollbar appear and disappear when mouse is over the element */
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -ms-overflow-style: none; /* for Internet Explorer */
+  scrollbar-width: none; /* for Firefox */
+}
+
+.hide-scrollbar-y::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.text-scrollbar {
+  overflow-y: auto;
+  overflow-x: auto;
+  scrollbar-color: lightblue transparent;
+}
+
+.text-scrollbar::-webkit-scrollbar {
+  background: transparent;
+  width: 10px;
+  height: 10px;
+}
+
+/* make color show up when scrolling */
+.text-scrollbar::-webkit-scrollbar-thumb {
+  background: lightblue;
+  border-radius: 20px;
+  visibility: var(--ide-scrollbar-visibility);
+}
+
+.text-scrollbar::-webkit-scrollbar-corner {
+  background: transparent;
+  border-radius: 20px;
+}
+
+.text-scrollbar::-moz-scrollbar {
+  width: 2ch;
+  visibility: var(--ide-scrollbar-visibility);
+}
+
+.text-scrollbar::-moz-scrollbar-thumb {
+  background: lightblue;
+  border-radius: 20px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .text-scrollbar::-webkit-scrollbar-thumb {
+    background: lightblue;
+  }
+}
+/* start rounded switch button */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--ide-theme-slider);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+  /*give outline 1 pixel away from the slider */
+  outline-offset: 3px;
+  outline: 2px solid white;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* end rounded switch button */
+/* start rounded radio button */
+.theme-radio-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  font-size: 16px;
+  color: var(--ide-text-color);
+  font-weight: 400;
+  font-family: Montserrat, sans-serif;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.theme-radio-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.theme-radio-checkmark {
+  position: absolute;
+  top: 20;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  outline: 2px solid var(--ide-text-color);
+  outline-offset: 3px;
+}
+
+.theme-radio-container:hover input ~ .theme-radio-checkmark {
+  background-color: #ccc;
+}
+
+.theme-radio-container input:checked ~ .theme-radio-checkmark {
+  background-color: var(--ide-theme-checkbox);
+  outline: 2px solid var(--ide-theme-checkbox);
+}
+
+.tab-scrollbar {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  -ms-overflow-style: none; /* for Internet Explorer */
+  scrollbar-width: thin; /* for Firefox */
+  /* Firefox */
+  scrollbar-color: #888 rgba(0, 0, 0, 0); /* thumb and track color */
+  scrollbar-width: thin;
+}
+.tab-scrollbar::-webkit-scrollbar {
+  height: 6px; /* adjust as needed for desired "thinness" */
+  background: var(--tab-scrollbar-gutter-background);
+}
+.tab-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--tab-scrollbar-thumb-background);
+  border-radius: 4px; /* roundness of the scroll thumb */
+  height: 3px; /* height of the scroll thumb */
+  border: 1px solid var(--tab-scrollbar-gutter-background); /* border around the thumb */
+}
+.tab-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--tab-scrollbar-thumb-hover-color);
+}
+
+.ideEditing {
+  font-family: "Courier New", Courier, monospace !important;
+}
+
+/*# sourceMappingURL=style.css.map */

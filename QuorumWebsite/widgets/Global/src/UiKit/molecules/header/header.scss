@@ -1,0 +1,42 @@
+@use '../../foundations/colors/Colors.scss' as *;
+@use '../../foundations/typography/typography.scss' as typography;
+
+$header-theme:(
+  light:(
+    background: map-get($colors, quorum, blue, 10),
+    color: #000,
+  ),
+  dark:(
+    background: map-get($colors, neutral, grey, 95),
+    color: #fff,
+  ),
+  hico:(
+    background: map-get($colors, neutral, black),
+    color: #fff,
+  ),
+);
+
+
+@each $theme, $theme-map in $header-theme {
+    .header-#{$theme} {
+      //put background on the left side of the header
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      background-color: map-get($theme-map, background);
+      color: map-get($theme-map, color);
+      height: fit-content;
+      border-top-right-radius: inherit;
+      border-top-left-radius: inherit;
+      box-sizing: border-box;
+      width: 100%;
+      padding: 16px;
+      row-gap: 16px;
+      line-height: 30px;
+      font-size: map-get(typography.$Typography, title, title2, font-size);
+      font-weight: map-get(typography.$Typography, title, title2, font-weight);
+      font-family: map-get(typography.$Typography, title, title2, font-family);
+    }
+}

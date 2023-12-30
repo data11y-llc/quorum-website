@@ -1,0 +1,146 @@
+.light-mode .range-slider::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, rgb(117, 189, 219) 0%, rgb(117, 189, 219) var(--value-percent), rgb(101, 101, 101) var(--value-percent), rgb(101, 101, 101) 100%);
+}
+.light-mode .range-slider::-moz-range-track {
+  background: linear-gradient(to right, rgb(117, 189, 219) 0%, rgb(117, 189, 219) var(--value-percent), rgb(101, 101, 101) var(--value-percent), rgb(101, 101, 101) 100%);
+}
+.light-mode .range-slider::-ms-track {
+  background: linear-gradient(to right, rgb(117, 189, 219) 0%, rgb(117, 189, 219) var(--value-percent), rgb(101, 101, 101) var(--value-percent), rgb(101, 101, 101) 100%);
+}
+.light-mode .range-slider::-webkit-slider-thumb {
+  background-color: rgb(6, 149, 208);
+}
+.light-mode .range-slider::-moz-range-thumb {
+  background-color: rgb(6, 149, 208);
+}
+.light-mode .range-slider::-ms-thumb {
+  background-color: rgb(6, 149, 208);
+}
+.light-mode .value-display {
+  background-color: rgb(229, 230, 230);
+  color: rgb(0, 0, 0);
+}
+
+.dark-mode .range-slider::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, rgb(117, 189, 219) 0%, rgb(117, 189, 219) var(--value-percent), rgb(114, 114, 114) var(--value-percent), rgb(114, 114, 114) 100%);
+}
+.dark-mode .range-slider::-moz-range-track {
+  background: linear-gradient(to right, rgb(117, 189, 219) 0%, rgb(117, 189, 219) var(--value-percent), rgb(114, 114, 114) var(--value-percent), rgb(114, 114, 114) 100%);
+}
+.dark-mode .range-slider::-ms-track {
+  background: linear-gradient(to right, rgb(117, 189, 219) 0%, rgb(117, 189, 219) var(--value-percent), rgb(114, 114, 114) var(--value-percent), rgb(114, 114, 114) 100%);
+}
+.dark-mode .range-slider::-webkit-slider-thumb {
+  background-color: rgb(117, 189, 219);
+}
+.dark-mode .range-slider::-moz-range-thumb {
+  background-color: rgb(117, 189, 219);
+}
+.dark-mode .range-slider::-ms-thumb {
+  background-color: rgb(117, 189, 219);
+}
+.dark-mode .value-display {
+  background-color: rgb(64, 64, 64);
+  color: rgb(255, 255, 255);
+}
+
+.high-contrast-mode .range-slider::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, rgb(58, 220, 255) 0%, rgb(58, 220, 255) var(--value-percent), rgb(43, 43, 43) var(--value-percent), rgb(43, 43, 43) 100%);
+}
+.high-contrast-mode .range-slider::-moz-range-track {
+  background: linear-gradient(to right, rgb(58, 220, 255) 0%, rgb(58, 220, 255) var(--value-percent), rgb(43, 43, 43) var(--value-percent), rgb(43, 43, 43) 100%);
+}
+.high-contrast-mode .range-slider::-ms-track {
+  background: linear-gradient(to right, rgb(58, 220, 255) 0%, rgb(58, 220, 255) var(--value-percent), rgb(43, 43, 43) var(--value-percent), rgb(43, 43, 43) 100%);
+}
+.high-contrast-mode .range-slider::-webkit-slider-thumb {
+  background-color: rgb(255, 255, 255);
+}
+.high-contrast-mode .range-slider::-moz-range-thumb {
+  background-color: rgb(255, 255, 255);
+}
+.high-contrast-mode .range-slider::-ms-thumb {
+  background-color: rgb(255, 255, 255);
+}
+.high-contrast-mode .value-display {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.slider-container {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.range-slider {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  height: 20px;
+}
+.range-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+.range-slider::-moz-range-track {
+  width: 100%;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+.range-slider::-ms-track {
+  width: 100%;
+  height: 8px;
+  background-color: #ccc;
+  border-radius: 5px;
+}
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4px;
+  transition: background-color 0.2s;
+}
+.range-slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.range-slider::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  background-color: #007bff;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.value-display {
+  display: inline-block;
+  border-radius: 8px;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-left: 4px;
+  font-weight: bold;
+  line-height: 1;
+  width: 4em;
+  text-align: center;
+}
+
+/*# sourceMappingURL=slider.css.map */

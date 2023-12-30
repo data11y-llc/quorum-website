@@ -1,0 +1,50 @@
+export type Styles = {
+  'atrule': string;
+  'attr-name': string;
+  'attr-value': string;
+  'boolean': string;
+  'builtin': string;
+  'char': string;
+  'class-name': string;
+  'comment': string;
+  'constant': string;
+  'dark': string;
+  'data11y-code': string;
+  'deleted': string;
+  'entity': string;
+  'function': string;
+  'hide-scrollbar': string;
+  'hide-scrollbar-y': string;
+  'high-contrast': string;
+  'ideEditing': string;
+  'important': string;
+  'inserted': string;
+  'keyword': string;
+  'language-css': string;
+  'light': string;
+  'number': string;
+  'operator': string;
+  'property': string;
+  'regex': string;
+  'round': string;
+  'selector': string;
+  'slider': string;
+  'string': string;
+  'style': string;
+  'switch': string;
+  'symbol': string;
+  'tab-scrollbar': string;
+  'tag': string;
+  'text-scrollbar': string;
+  'theme-radio-checkmark': string;
+  'theme-radio-container': string;
+  'token': string;
+  'url': string;
+  'variable': string;
+};
+
+export type ClassNames = keyof Styles;
+
+declare const styles: Styles;
+
+export default styles;

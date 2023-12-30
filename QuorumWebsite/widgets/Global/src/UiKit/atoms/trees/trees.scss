@@ -1,0 +1,111 @@
+@use "../../foundations/colors/colors.scss" as *;
+
+$light-color: #FFFFFF;
+$dark-color: #F0F0F0;
+
+.accordion {
+  padding: 10px 0;
+  background-color: $light-color;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+  height: 100%;
+  overflow: auto;
+  font-family: "Montserrat", sans-serif;
+
+.breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: "Montserrat", sans-serif;
+  margin-bottom: 10px;
+  align-items: center;
+  margin-left: 4px;
+  .breadHome-item {
+    font-size: 16px;
+    color: black;
+    cursor: pointer;
+    $home-arrow: '@/UiKit/atoms/trees/icons/homeArrow.svg';
+    border: none;
+    background: none;
+    cursor: pointer;
+    width: 100%;
+    //make the text align left
+    text-align: left;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid black;
+    margin-bottom: 8px;
+    &:hover {
+      text-decoration: underline;
+    }
+    &::before {
+      content: url($home-arrow);
+      margin: 0 5px;
+    }
+    &:last-child::after {
+      content: "";
+    }
+  }
+  .breadcrumb-item {
+    font-size: 16px;
+    //make darker than grey
+    color: black;
+    cursor: pointer;
+    $left-arrow: '@/UiKit/atoms/trees/icons/leftArrow.svg';
+    &:hover {
+      text-decoration: underline;
+    }
+    &::before {
+      content: url($left-arrow);
+      margin: 0 5px;
+    }
+    &:last-child::after {
+      content: "";
+    }
+  }
+}
+}
+
+.accordion-item-branch, .accordion-item-leaf {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  height: 36px;
+  box-sizing: border-box;
+  width: 100%;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  transition: background-color 0.3s ease;
+
+  &:nth-child(odd) {
+    background-color: $light-color;
+  }
+
+  &:nth-child(even) {
+    background-color: $dark-color;
+  }
+
+  &:hover {
+    background-color: darken($light-color, 10%);
+  }
+
+  &:focus {
+    background-color: darken($light-color, 20%);
+  }
+}
+
+.accordion-item-branch {
+  $right-arrow: '@/UiKit/atoms/trees/icons/rightArrow.svg';
+  &::after {
+    content: url($right-arrow);
+    margin-left: 10px;
+  }
+
+  &[aria-expanded='true']::after {
+    content: '▼';
+  }
+}
+

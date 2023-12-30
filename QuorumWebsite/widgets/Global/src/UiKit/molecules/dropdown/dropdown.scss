@@ -1,0 +1,166 @@
+@use '../../foundations/colors/Colors.scss' as *;
+
+$dropdown-theme:(
+  light:(
+    background: map-get($colors, neutral, white),
+    border: map-get($colors, neutral, grey, 65),
+    color: map-get($colors, neutral, black),
+  ),
+  dark:(
+    background: map-get($colors, neutral, grey, 65),
+    border: map-get($colors, neutral, grey, 40),
+    color: map-get($colors, neutral, grey, 25),
+  ),
+  high-contrast:(
+    background: map-get($colors, neutral, black),
+    border: map-get($colors, neutral, grey, 25),
+    color: map-get($colors, neutral, white),
+  ),
+);
+
+/* The container must be positioned relative: */
+.custom-select {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: relative;
+  font-family: Montserrat;
+}
+
+.custom-select-column {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+
+.custom-select select {
+  display: none; /*hide original SELECT element: */
+}
+
+.select-selected {
+  color: map-get($colors, neutral, black);
+  padding: 8px 16px;
+  border: 1px solid map-get($colors, neutral, grey, 95);
+  width: 100%;
+  cursor: pointer;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  border-radius: 8px;
+}
+
+/* Style the arrow inside the select element: */
+.select-selected:after {
+  position: absolute;
+  top: 14px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 1px solid map-get($colors, neutral, grey, 95);
+}
+
+/* Point the arrow upwards when the select box is open (active): */
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent map-get($colors, neutral, grey, 25) transparent;
+  top: 7px;
+}
+
+/* Style items (options): */
+.select-items {
+  position: absolute;
+  background-color: map-get($colors, neutral, white);
+  border: 1px solid map-get($colors, neutral, grey, 95);
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  border-radius: 8px;
+  margin-top: 3px;
+  //only show 8 then scroll
+  max-height: 264px;
+  overflow-y: auto;
+  & div {
+    padding-left: 16px;
+    box-sizing: border-box;
+    padding-right: 16px;
+    border: 1px solid;
+    cursor: pointer;
+    border-color: transparent transparent map-get($colors, neutral, grey, 25) transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 33px;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: Montserrat;
+
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.1);
+      //make first have border radius
+      &:first-child {
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+      }
+      //make last have border radius
+      &:last-child {
+        border-bottom-left-radius: 8px;
+        border-bottom-right-radius: 8px;
+      }
+    }
+  }
+  //make the scrollbar have transparent background and move it to the left
+  &::-webkit-scrollbar {
+    width: 8px;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: map-get($colors, quorum, blue, 100);
+    margin-right: 8px;
+    border-radius: 8px;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background-color: map-get($colors, quorum, blue, 100);
+  }
+
+  &::-webkit-scrollbar-thumb:active {
+    background-color: map-get($colors, quorum, blue, 100);
+  }
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+  display: none;
+}
+
+/* light theme */
+.dropdown-light-theme {
+  border-color: #333333;
+  background-color: #ffffff !important;
+  color: #333333;
+}
+
+/* dark theme */
+.dropdown-dark-theme {
+  background-color: #333333 !important;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+/* high-contrast theme */
+.dropdown-hico-theme {
+  background-color: #000000 !important;
+  border-color: #ffffff;
+  color: #ffffff;
+}
+
+.dropdown-arrow-black{
+background: url('@/UiKit/atoms/icons/svg/icon4.svg') no-repeat 96% 50%;
+background-size: 10px;
+}
+.dropdown-arrow-white{
+background: url('@/UiKit/atoms/icons/svg/icon7.svg') no-repeat 96% 50%;
+background-size: 10px;
+}
+

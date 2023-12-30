@@ -1,0 +1,8 @@
+.cell-focused {
+  outline: 2px solid #4a4a4a;
+  transform: scale(1.1);
+  transition: all 0.1s ease;
+  z-index: 10;
+}
+
+/*# sourceMappingURL=style.css.map */
